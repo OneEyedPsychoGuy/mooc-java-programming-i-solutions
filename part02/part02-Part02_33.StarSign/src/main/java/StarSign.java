@@ -3,6 +3,8 @@ public class StarSign {
         printStars(5);
         printStars(3);
         printStars(9);
+        System.out.println("");
+        printSquare(4);
     }
 
     public static void printStars(int number) {
@@ -11,5 +13,11 @@ public class StarSign {
             number--;
         }
         System.out.println("");
+    }
+
+    public static void printSquare(int size) {
+        for(int i = 0; i < size; i++) {
+            printStars(size);
+        }
     }
 }
