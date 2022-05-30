@@ -2,7 +2,9 @@ import java.util.Scanner;
 
 public class MainProgram {
     public static void main(String[] args) {
-        Statistics stat = new Statistics();
+        Statistics statAll = new Statistics();
+        Statistics statEven = new Statistics();
+        Statistics statOdd = new Statistics();
         Scanner scanner = new Scanner(System.in);
  
         System.out.println("Enter numbers:");
@@ -11,10 +13,18 @@ public class MainProgram {
             if(answer == -1) {
                 break;
             }
-            stat.addNumber(answer);
+ 
+            statAll.addNumber(answer);
+            if(answer % 2 == 0) {
+                statEven.addNumber(answer);
+            } else {
+                statOdd.addNumber(answer);
+            }
         }
  
-        System.out.println("Sum: " + stat.sum());
+        System.out.println("Sum: " + statAll.sum());
+        System.out.println("Sum of even numbers: " + statEven.sum());
+        System.out.println("Sum of odd numbers: " + statOdd.sum());
         scanner.close();
     }
 }
