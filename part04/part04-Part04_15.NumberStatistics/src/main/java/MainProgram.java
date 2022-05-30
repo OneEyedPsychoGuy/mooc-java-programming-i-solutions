@@ -1,12 +1,20 @@
+import java.util.Scanner;
+
 public class MainProgram {
     public static void main(String[] args) {
-        Statistics statistics = new Statistics();
-        statistics.addNumber(3);
-        statistics.addNumber(5);
-        statistics.addNumber(1);
-        statistics.addNumber(2);
-        System.out.println("Count: " + statistics.getCount());
-        System.out.println("Sum: " + statistics.sum());
-        System.out.println("Average: " + statistics.average());
+        Statistics stat = new Statistics();
+        Scanner scanner = new Scanner(System.in);
+ 
+        System.out.println("Enter numbers:");
+        while(true) {
+            int answer = Integer.valueOf(scanner.nextLine());
+            if(answer == -1) {
+                break;
+            }
+            stat.addNumber(answer);
+        }
+ 
+        System.out.println("Sum: " + stat.sum());
+        scanner.close();
     }
 }
