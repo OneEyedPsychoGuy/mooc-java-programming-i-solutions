@@ -20,6 +20,10 @@ public class PaymentCard {
     }
 
     public void addMoney(double amount) {
+        if(amount < 0) {
+            return;
+        }
+ 
         double post = this.balance + amount;
         if(post > 150) {
             this.balance = 150;
