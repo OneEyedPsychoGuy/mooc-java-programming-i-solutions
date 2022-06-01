@@ -6,11 +6,17 @@ public class PaymentCard {
     }
 
     public void eatAffordably() {
-        this.balance -= 2.60;
+        double post = this.balance - 2.60;
+        if(post >= 0) {
+            this.balance = post;
+        }
     }
  
     public void eatHeartily() {
-        this.balance -= 4.60;
+        double post = this.balance - 4.60;
+        if(post >= 0) {
+            this.balance = post;
+        }
     }
 
     public String toString() {
