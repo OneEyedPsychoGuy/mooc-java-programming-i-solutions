@@ -10,6 +10,14 @@ public class PaymentTerminal {
         this.money = 1000;
     }
 
+    public boolean eatAffordably(PaymentCard card) {
+        boolean tookMoney = card.takeMoney(AFFORDABLE_MEAL_COST);
+        if(tookMoney) {
+            this.affordableMeals++;
+        }
+        return tookMoney;
+    }
+
     public double eatAffordably(double payment) {
         double change = payment - AFFORDABLE_MEAL_COST;
  
@@ -20,6 +28,14 @@ public class PaymentTerminal {
         }
  
         return payment;
+    }
+
+    public boolean eatHeartily(PaymentCard card) {
+        boolean tookMoney = card.takeMoney(HEARTY_MEAL_COST);
+        if(tookMoney) {
+            this.heartyMeals++;
+        }
+        return tookMoney;
     }
 
     public double eatHeartily(double payment) {
