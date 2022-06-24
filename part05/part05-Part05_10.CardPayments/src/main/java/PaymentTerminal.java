@@ -1,15 +1,22 @@
 public class PaymentTerminal {
     private static final double AFFORDABLE_MEAL_COST = 2.50;
     private static final double HEARTY_MEAL_COST = 4.30;
-
+ 
     private double money;
     private int affordableMeals;
     private int heartyMeals;
-
+ 
     public PaymentTerminal() {
         this.money = 1000;
     }
-
+ 
+    public void addMoneyToCard(PaymentCard card, double sum) {
+        if(sum > 0) {
+            card.addMoney(sum);
+            this.money += sum;
+        }
+    }
+ 
     public boolean eatAffordably(PaymentCard card) {
         boolean tookMoney = card.takeMoney(AFFORDABLE_MEAL_COST);
         if(tookMoney) {
@@ -17,7 +24,7 @@ public class PaymentTerminal {
         }
         return tookMoney;
     }
-
+ 
     public double eatAffordably(double payment) {
         double change = payment - AFFORDABLE_MEAL_COST;
  
@@ -29,7 +36,7 @@ public class PaymentTerminal {
  
         return payment;
     }
-
+ 
     public boolean eatHeartily(PaymentCard card) {
         boolean tookMoney = card.takeMoney(HEARTY_MEAL_COST);
         if(tookMoney) {
@@ -37,7 +44,7 @@ public class PaymentTerminal {
         }
         return tookMoney;
     }
-
+ 
     public double eatHeartily(double payment) {
         double change = payment - HEARTY_MEAL_COST;
  
@@ -49,8 +56,9 @@ public class PaymentTerminal {
  
         return payment;
     }
-
+ 
+    @Override
     public String toString() {
-        return "money: " + money + ", number of sold afforable meals: " + affordableMeals + ", number of sold hearty meals: " + heartyMeals;
+        return "money: " + money + ", number of sold affordable meals: " + affordableMeals + ", number of sold hearty meals: " + heartyMeals;
     }
 }
