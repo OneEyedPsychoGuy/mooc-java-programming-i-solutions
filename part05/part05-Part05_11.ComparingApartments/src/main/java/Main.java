@@ -4,7 +4,7 @@ public class Main {
         Apartment atlantaTwoBedroomApt = new Apartment(2, 38, 4200);
         Apartment bangorThreeBedroomApt = new Apartment(3, 78, 2500);
         
-        System.out.println(manhattanStudioApt.priceDifference(atlantaTwoBedroomApt));
-        System.out.println(bangorThreeBedroomApt.priceDifference(atlantaTwoBedroomApt));
+        System.out.println(manhattanStudioApt.moreExpensiveThan(atlantaTwoBedroomApt));  // false
+        System.out.println(bangorThreeBedroomApt.moreExpensiveThan(atlantaTwoBedroomApt));   // true
     }
 }
