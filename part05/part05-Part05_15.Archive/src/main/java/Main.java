@@ -20,14 +20,15 @@ public class Main {
             }
 
             Archive archive = new Archive(id, title);
-            archives.add(archive);
+            if(!archives.contains(archive)) {
+                archives.add(archive);
+            }
         }
         
         System.out.println("==Items==");
         for(Archive archive : archives) {
             System.out.println(archive);
         }
-
         scanner.close();
     }
 }
