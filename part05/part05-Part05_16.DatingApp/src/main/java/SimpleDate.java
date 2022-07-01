@@ -23,6 +23,12 @@ public class SimpleDate {
         }
     }
 
+    public void advance(int howManyDays) {
+        for(int i = 0; i < howManyDays; i++) {
+            this.advance();
+        }
+    }
+
     @Override
     public String toString() {
         return this.day + "." + this.month + "." + this.year;
