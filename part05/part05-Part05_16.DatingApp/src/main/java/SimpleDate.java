@@ -9,6 +9,12 @@ public class SimpleDate {
         this.year = year;
     }
 
+    public SimpleDate afterNumberOfDays(int days) {
+        SimpleDate newDate = new SimpleDate(this.day, this.month, this.year);
+        newDate.advance(days);
+        return newDate;
+    }
+
     public void advance() {
         this.day++;
 
