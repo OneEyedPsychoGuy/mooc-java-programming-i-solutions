@@ -12,4 +12,10 @@ public class Menu {
             this.meals.add(meal);
         }
     }
+
+    public void printMeals() {
+        for(String meal : meals) {
+            System.out.println(meal);
+        }
+    }
 }
