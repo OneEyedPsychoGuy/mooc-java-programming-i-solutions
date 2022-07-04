@@ -18,4 +18,8 @@ public class Menu {
             System.out.println(meal);
         }
     }
+
+    public void clearMenu() {
+        this.meals.clear();
+    }
 }
