@@ -18,4 +18,8 @@ public class Stack {
     public ArrayList<String> values() {
         return this.stack;
     }
+
+    public String take() {
+        return this.stack.remove(this.stack.size() - 1);
+    }
 }
