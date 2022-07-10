@@ -20,17 +20,23 @@ public class Room {
     }
 
     public Person shortest() {
-        if(persons.isEmpty()) {
+        if(this.isEmpty()) {
             return null;
         }
 
-        Person shortest = persons.get(0);
-        for(Person person : persons) {
+        Person shortest = this.persons.get(0);
+        for(Person person : this.persons) {
             if(shortest.getHeight() > person.getHeight()) {
                 shortest = person;
             }
         }
 
+        return shortest;
+    }
+
+    public Person take() {
+        Person shortest = this.shortest();
+        this.persons.remove(shortest);
         return shortest;
     }
 }
