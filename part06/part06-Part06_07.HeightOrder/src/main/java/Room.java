@@ -18,4 +18,19 @@ public class Room {
     public boolean isEmpty() {
         return this.persons.isEmpty();
     }
+
+    public Person shortest() {
+        if(persons.isEmpty()) {
+            return null;
+        }
+
+        Person shortest = persons.get(0);
+        for(Person person : persons) {
+            if(shortest.getHeight() > person.getHeight()) {
+                shortest = person;
+            }
+        }
+
+        return shortest;
+    }
 }
