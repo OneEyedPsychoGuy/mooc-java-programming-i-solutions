@@ -18,10 +18,20 @@ public class Suitcase {
         }
     }
 
+    public void printItems() {
+        for(Item item : this.items) {
+            System.out.println(item);
+        }
+    }
+
+    public int totalWeight() {
+        return this.currentWeight;
+    }
+
     public String toString() {
         if(this.items.isEmpty()) {
             return "no items (0 kg)";
         }
-        return items.size() + " item" + (this.items.size() == 1 ? "" : "s") + " (" + this.currentWeight + " kg)";
+        return this.items.size() + " item" + (this.items.size() == 1 ? "" : "s") + " (" + this.currentWeight + " kg)";
     }
 }
