@@ -19,6 +19,9 @@ public class Suitcase {
     }
 
     public String toString() {
-        return items.size() + " items (" + this.currentWeight + " kg)";
+        if(this.items.isEmpty()) {
+            return "no items (0 kg)";
+        }
+        return items.size() + " item" + (this.items.size() == 1 ? "" : "s") + " (" + this.currentWeight + " kg)";
     }
 }
