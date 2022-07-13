@@ -24,6 +24,7 @@ public class Hold {
         }
     }
 
+    @Override
     public String toString() {
         if(this.suitcases.isEmpty()) {
             return "no suitcases (0 kg)";

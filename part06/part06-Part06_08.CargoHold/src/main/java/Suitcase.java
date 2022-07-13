@@ -43,6 +43,7 @@ public class Suitcase {
         return heaviest;
     }
 
+    @Override
     public String toString() {
         if(this.items.isEmpty()) {
             return "no items (0 kg)";
