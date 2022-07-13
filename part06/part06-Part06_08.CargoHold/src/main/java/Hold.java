@@ -18,10 +18,16 @@ public class Hold {
         }
     }
 
+    public void printItems() {
+        for(Suitcase suitcase : this.suitcases) {
+            suitcase.printItems();
+        }
+    }
+
     public String toString() {
         if(this.suitcases.isEmpty()) {
             return "no suitcases (0 kg)";
         }
-        return this.suitcases.size() + " item" + (this.suitcases.size() == 1 ? "" : "s") + " (" + this.currentWeight + " kg)";
+        return this.suitcases.size() + " suitcase" + (this.suitcases.size() == 1 ? "" : "s") + " (" + this.currentWeight + " kg)";
     }
 }
