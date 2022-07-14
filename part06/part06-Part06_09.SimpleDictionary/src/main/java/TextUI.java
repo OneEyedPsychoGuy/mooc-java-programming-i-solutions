@@ -10,33 +10,53 @@ public class TextUI {
     }
 
     public void start() {
-        while (true) {
+        String command = "";
+
+        do {
             System.out.print("Command: ");
-            String userCommand = scanner.nextLine();
+            command = this.scanner.nextLine();
+            this.processCommand(command);
+        } while(!command.equals("end"));
+    }
 
-            if(userCommand.equals("add")) {
-                System.out.print("Word: ");
-                String word = scanner.nextLine();
-                System.out.print("Translation: ");
-                String translation = scanner.nextLine();
-
-                this.dictionary.add(word, translation);
-            } else if(userCommand.equals("end")) {
-                System.out.println("Bye bye!");
+    public void processCommand(String command) {
+        switch(command) {
+            case "add":
+                this.add();
                 break;
-            } else if(userCommand.equals("search")) {
-                System.out.print("To be translated: ");
-                String toBeTranslated = scanner.nextLine();
-                String translated = this.dictionary.translate(toBeTranslated);
-
-                if(translated == null) {
-                    System.out.println("Word " + toBeTranslated + " was not found");
-                } else {
-                    System.out.println("Translation: " + translated);
-                }
-            } else {
+            case "search":
+                this.search();
+                break;
+            case "end":
+                this.end();
+                break;
+            default:
                 System.out.println("Unknown command");
-            }
         }
+    }
+
+    public void add() {
+        System.out.print("Word: ");
+        String word = this.scanner.nextLine();
+        System.out.print("Translation: ");
+        String translation = this.scanner.nextLine();
+
+        this.dictionary.add(word, translation);
+    }
+
+    public void search() {
+        System.out.print("To be translated: ");
+        String word = this.scanner.nextLine();
+        String translation = this.dictionary.translate(word);
+
+        if(translation == null) {
+            System.out.println("Word " + word + " was not found");
+        } else {
+            System.out.println("Translation: " + translation);
+        }
+    }
+
+    public void end() {
+        System.out.println("Bye bye!");
     }
 }
