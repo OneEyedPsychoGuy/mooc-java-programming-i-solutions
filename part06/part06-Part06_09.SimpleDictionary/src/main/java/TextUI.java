@@ -27,8 +27,13 @@ public class TextUI {
             } else if(userCommand.equals("search")) {
                 System.out.print("To be translated: ");
                 String toBeTranslated = scanner.nextLine();
+                String translated = this.dictionary.translate(toBeTranslated);
 
-                System.out.println("Translation: " + this.dictionary.translate(toBeTranslated));
+                if(translated == null) {
+                    System.out.println("Word " + toBeTranslated + " was not found");
+                } else {
+                    System.out.println("Translation: " + translated);
+                }
             } else {
                 System.out.println("Unknown command");
             }
