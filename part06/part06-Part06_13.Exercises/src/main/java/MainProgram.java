@@ -1,5 +1,5 @@
 public class MainProgram {
     public static int partsCompleted() {
-        return 1;
+        return 2;
     }
 }
