@@ -3,8 +3,7 @@ import java.util.Scanner;
 public class LiquidContainers {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int first = 0;
-        int second = 0;
+        int first = 0, second = 0;
 
         while (true) {
             System.out.println("First: " + first + "/100");
@@ -43,7 +42,17 @@ public class LiquidContainers {
                         second = 100;
                     }
                     break;
+                case "remove":
+                    second -= amount;
+                    if(second < 0) {
+                        second = 0;
+                    }
+                    break;
+                default:
+                    System.out.println("Unknown command");
             }
+
+            System.out.println("");
         }
         scanner.close();
     }
