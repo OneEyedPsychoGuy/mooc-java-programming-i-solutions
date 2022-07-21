@@ -30,6 +30,19 @@ public class LiquidContainers {
                         first = 100;
                     }
                     break;
+                case "move":
+                    if(first < amount) {
+                        second += first;
+                        first = 0;
+                    } else {
+                        second += amount;
+                        first -= amount;
+                    }
+
+                    if(second > 100) {
+                        second = 100;
+                    }
+                    break;
             }
         }
         scanner.close();
