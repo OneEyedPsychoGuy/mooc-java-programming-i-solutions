@@ -31,12 +31,11 @@ public class LiquidContainers {
                     break;
                 case "move":
                     if(first < amount) {
-                        second += first;
-                        first = 0;
-                    } else {
-                        second += amount;
-                        first -= amount;
+                        amount = first;
                     }
+        
+                    first -= amount;
+                    second += amount;
 
                     if(second > 100) {
                         second = 100;
