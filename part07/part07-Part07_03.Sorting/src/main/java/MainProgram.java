@@ -1,9 +1,16 @@
+import java.util.Arrays;
+
 public class MainProgram {
     public static void main(String[] args) {
-        int[] numbers = {-1, 6, 9, 8, 12};
-        System.out.println(MainProgram.indexOfSmallestFrom(numbers, 0));
-        System.out.println(MainProgram.indexOfSmallestFrom(numbers, 1));
-        System.out.println(MainProgram.indexOfSmallestFrom(numbers, 2));
+        int[] numbers = {3, 2, 5, 4, 8};
+
+        System.out.println(Arrays.toString(numbers));
+        
+        MainProgram.swap(numbers, 1, 0);
+        System.out.println(Arrays.toString(numbers));
+        
+        MainProgram.swap(numbers, 0, 3);
+        System.out.println(Arrays.toString(numbers));
     }
 
     public static int smallest(int[] array) {
@@ -34,5 +41,11 @@ public class MainProgram {
             }
         }
         return index;
+    }
+
+    public static void swap(int[] array, int index1, int index2) {
+        int helper = array[index1];
+        array[index1] = array[index2];
+        array[index2] = helper;
     }
 }
