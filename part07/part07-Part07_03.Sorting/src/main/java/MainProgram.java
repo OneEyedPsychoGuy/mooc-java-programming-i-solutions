@@ -13,4 +13,16 @@ public class MainProgram {
         }
         return smallest;
     }
+
+    public static int indexOfSmallest(int[] array) {
+        int index = -1;
+        int smallest = array[0];
+        for(int i = 0; i < array.length; i++) {
+            if(smallest > array[i]) {
+                smallest = array[i];
+                index = i;
+            }
+        }
+        return index;
+    }
 }
