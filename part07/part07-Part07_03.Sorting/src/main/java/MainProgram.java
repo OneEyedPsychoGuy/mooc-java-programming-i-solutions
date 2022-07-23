@@ -1,7 +1,9 @@
 public class MainProgram {
     public static void main(String[] args) {
-        int[] numbers = {6, 5, 8, 7, 11};
-        System.out.println("Index of the smallest number: " + MainProgram.indexOfSmallest(numbers));
+        int[] numbers = {-1, 6, 9, 8, 12};
+        System.out.println(MainProgram.indexOfSmallestFrom(numbers, 0));
+        System.out.println(MainProgram.indexOfSmallestFrom(numbers, 1));
+        System.out.println(MainProgram.indexOfSmallestFrom(numbers, 2));
     }
 
     public static int smallest(int[] array) {
@@ -15,11 +17,19 @@ public class MainProgram {
     }
 
     public static int indexOfSmallest(int[] array) {
-        int index = -1;
-        int smallest = array[0];
+        int index = 0;
         for(int i = 0; i < array.length; i++) {
-            if(smallest > array[i]) {
-                smallest = array[i];
+            if(array[index] > array[i]) {
+                index = i;
+            }
+        }
+        return index;
+    }
+
+    public static int indexOfSmallestFrom(int[] table, int startIndex) {
+        int index = startIndex;
+        for(int i = startIndex; i < table.length; i++) {
+            if(table[index] > table[i]) {
                 index = i;
             }
         }
