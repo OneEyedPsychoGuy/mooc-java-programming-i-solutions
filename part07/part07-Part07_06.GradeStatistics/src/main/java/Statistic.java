@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 
 public class Statistic {
+    private static int MIN_POINTS = 0;
+    private static int MAX_POINTS = 100;
+    private static int PASSING_GRADE = 50;
+
     private ArrayList<Integer> points;
 
     public Statistic() {
@@ -8,13 +12,13 @@ public class Statistic {
     }
 
     public void add(int points) {
-        if(points >= 0 && points <= 100) {
+        if(points >= MIN_POINTS && points <= MAX_POINTS) {
             this.points.add(points);
         }
     }
 
     public double averageAllPoints() {
-        if(this.points.size() == 0) {
+        if(this.points.isEmpty()) {
             return -1;
         }
 
@@ -26,22 +30,26 @@ public class Statistic {
     }
 
     public double averagePassingPoints() {
-        if(this.points.size() == 0) {
+        if(this.points.isEmpty() || this.countPassing() == 0) {
             return -1;
         }
 
-        int sum = 0, count = 0;
+        int sum = 0;
         for(int points : this.points) {
-            if(points >= 50) {
-                count++;
-                sum += points;
-            }
+            if(points >= PASSING_GRADE) sum += points;
         }
+        return 1.0 * sum / this.countPassing();
+    }
 
-        if(count == 0) {
-            return -1;
+    public double passPercentage() {
+        return 100.0 * this.countPassing() / this.points.size();
+    }
+
+    public int countPassing() {
+        int count = 0;
+        for(int points : this.points) {
+            if(points >= PASSING_GRADE) count++;
         }
-
-        return 1.0 * sum / count;
+        return count;
     }
 }
