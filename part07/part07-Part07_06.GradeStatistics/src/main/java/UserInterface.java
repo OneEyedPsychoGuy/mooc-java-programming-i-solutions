@@ -19,6 +19,11 @@ public class UserInterface {
 
             this.statistic.add(points);
         }
-        System.out.println("Point average (all): " + this.statistic.averagePoints());
+
+        double averageAllPoints = this.statistic.averageAllPoints();
+        double averagePassingPoints = this.statistic.averagePassingPoints();
+
+        System.out.println("Point average (all): " + (averageAllPoints != -1.0 ? averageAllPoints : "-"));
+        System.out.println("Point average (passing): " + (averagePassingPoints != -1.0 ? averagePassingPoints : "-"));
     }
 }
