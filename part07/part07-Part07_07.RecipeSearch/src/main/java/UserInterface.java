@@ -1,0 +1,105 @@
+import java.util.List;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class UserInterface {
+    private List<Recipe> recipes;
+    private Scanner keyboard;
+
+    public UserInterface() {
+        this.recipes = new ArrayList<>();
+        this.keyboard = new Scanner(System.in);
+    }
+
+    public void start() {
+        this.processRecipes();
+        this.menu();
+
+        while(true) {
+            System.out.print("Enter command: ");
+            String command = this.keyboard.nextLine();
+            System.out.println();
+            this.processCommand(command);
+            System.out.println();
+
+            if(command.equals("stop")) break;
+        }
+    }
+
+    private void processRecipes() {
+        try(Scanner fileReader = new Scanner(this.requestFileToRead())) {
+            while(fileReader.hasNextLine()) {
+                String name = fileReader.nextLine();
+                int cookingTime = Integer.valueOf(fileReader.nextLine());
+                ArrayList<String> ingredients = new ArrayList<>();
+                
+                while(fileReader.hasNextLine()) {
+                    String ingredient = fileReader.nextLine();
+                    if(ingredient.equals("")) break;
+                    ingredients.add(ingredient);
+                }
+
+                this.recipes.add(new Recipe(name, cookingTime, ingredients));
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private Path requestFileToRead() {
+        String fileName = "";
+
+        while(true) {
+            System.out.print("File to read: ");
+            fileName = this.keyboard.nextLine();
+            System.out.println();
+
+            if(this.isValidFile(fileName)) {
+                break;
+            }
+
+            System.out.println("File does not exist or is not readable\n");
+        }
+
+        return Paths.get(fileName);
+    }
+
+    private boolean isValidFile(String fileName) {
+        final Path filePath = Paths.get(fileName);
+        if(Files.exists(filePath) && Files.isReadable(filePath)) {
+            return true;
+        }
+        return false;
+    }
+
+    private void menu() {
+        System.out.println(
+            "Commands:\n" +
+            "list - lists the recipes\n" +
+            "stop - stops the program\n"
+        );
+    }
+
+    private void processCommand(String command) {
+        switch(command) {
+            case "list":
+                this.list();
+                break;
+            case "stop":
+                break;
+            default:
+                System.out.println("Unknown command");
+        }
+    }
+
+    private void list() {
+        System.out.println("Recipes:");
+        for(Recipe recipe : this.recipes) {
+            System.out.println(recipe);
+        }
+    }
+}
