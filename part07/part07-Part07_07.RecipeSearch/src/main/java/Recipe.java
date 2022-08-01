@@ -19,6 +19,10 @@ public class Recipe {
         return this.cookingTime;
     }
 
+    public List<String> getIngredients() {
+        return this.ingredients;
+    }
+
     @Override
     public String toString() {
         return this.name + ", cooking time: " + this.cookingTime;
