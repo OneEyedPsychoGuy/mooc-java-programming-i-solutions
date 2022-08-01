@@ -38,7 +38,7 @@ public class UserInterface {
                 
                 while(fileReader.hasNextLine()) {
                     String ingredient = fileReader.nextLine();
-                    if(ingredient.equals("")) break;
+                    if(ingredient.isEmpty()) break;
                     ingredients.add(ingredient);
                 }
 
@@ -51,7 +51,6 @@ public class UserInterface {
 
     private Path requestFileToRead() {
         String fileName = "";
-
         while(true) {
             System.out.print("File to read: ");
             fileName = this.keyboard.nextLine();
@@ -63,7 +62,6 @@ public class UserInterface {
 
             System.out.println("File does not exist or is not readable\n");
         }
-
         return Paths.get(fileName);
     }
 
@@ -121,7 +119,7 @@ public class UserInterface {
 
         System.out.println("\nRecipes:");
         for(Recipe recipe : this.recipes) {
-            if(recipe.getName().contains(name)) {
+            if(recipe.containsName(name)) {
                 System.out.println(recipe);
             }
         }
@@ -134,7 +132,7 @@ public class UserInterface {
 
         System.out.println("\nRecipes:");
         for(Recipe recipe : this.recipes) {
-            if(recipe.getCookingTime() <= maxCookingTime) {
+            if(recipe.isLessThanOrEqualToCookingTime(maxCookingTime)) {
                 System.out.println(recipe);
             }
         }
@@ -147,7 +145,7 @@ public class UserInterface {
 
         System.out.println("\nRecipes:");
         for(Recipe recipe : this.recipes) {
-            if(recipe.getIngredients().contains(ingredient)) {
+            if(recipe.containsIngredient(ingredient)) {
                 System.out.println(recipe);
             }
         }

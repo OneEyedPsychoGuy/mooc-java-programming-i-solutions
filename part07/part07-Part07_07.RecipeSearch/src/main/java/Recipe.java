@@ -11,16 +11,16 @@ public class Recipe {
         this.ingredients = ingredients;
     }
 
-    public String getName() {
-        return this.name;
+    public boolean containsName(String name) {
+        return this.name.contains(name);
     }
 
-    public int getCookingTime() {
-        return this.cookingTime;
+    public boolean isLessThanOrEqualToCookingTime(int maxCookingTime) {
+        return this.cookingTime <= maxCookingTime;
     }
 
-    public List<String> getIngredients() {
-        return this.ingredients;
+    public boolean containsIngredient(String ingredient) {
+        return this.ingredients.contains(ingredient);
     }
 
     @Override
