@@ -80,7 +80,8 @@ public class UserInterface {
             "Commands:\n" +
             "list - lists the recipes\n" +
             "stop - stops the program\n" +
-            "find name - searches recipes by name\n"
+            "find name - searches recipes by name\n" +
+            "find cooking time - searches recipes by cooking time\n"
         );
     }
 
@@ -91,6 +92,9 @@ public class UserInterface {
                 break;
             case "find name":
                 this.findRecipesByName();
+                break;
+            case "find cooking time":
+                this.findRecipesByCookingTime();
                 break;
             case "stop":
                 break;
@@ -114,6 +118,19 @@ public class UserInterface {
         System.out.println("\nRecipes:");
         for(Recipe recipe : this.recipes) {
             if(recipe.getName().contains(name)) {
+                System.out.println(recipe);
+            }
+        }
+        System.out.println();
+    }
+
+    private void findRecipesByCookingTime() {
+        System.out.print("Max cooking time: ");
+        int maxCookingTime = Integer.valueOf(this.keyboard.nextLine());
+
+        System.out.println("\nRecipes:");
+        for(Recipe recipe : this.recipes) {
+            if(recipe.getCookingTime() <= maxCookingTime) {
                 System.out.println(recipe);
             }
         }
