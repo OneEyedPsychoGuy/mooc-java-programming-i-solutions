@@ -22,12 +22,11 @@ public class UserInterface {
         while(true) {
             System.out.print("Enter command: ");
             String command = this.keyboard.nextLine();
-            System.out.println();
             this.processCommand(command);
-            System.out.println();
 
             if(command.equals("stop")) break;
         }
+        System.out.println();
     }
 
     private void processRecipes() {
@@ -80,26 +79,44 @@ public class UserInterface {
         System.out.println(
             "Commands:\n" +
             "list - lists the recipes\n" +
-            "stop - stops the program\n"
+            "stop - stops the program\n" +
+            "find name - searches recipes by name\n"
         );
     }
 
     private void processCommand(String command) {
         switch(command) {
             case "list":
-                this.list();
+                this.listRecipes();
+                break;
+            case "find name":
+                this.findRecipesByName();
                 break;
             case "stop":
                 break;
             default:
-                System.out.println("Unknown command");
+                System.out.println("\nUnknown command\n");
         }
     }
 
-    private void list() {
-        System.out.println("Recipes:");
+    private void listRecipes() {
+        System.out.println("\nRecipes:");
         for(Recipe recipe : this.recipes) {
             System.out.println(recipe);
         }
+        System.out.println();
+    }
+
+    private void findRecipesByName() {
+        System.out.print("Searched word: ");
+        String name = this.keyboard.nextLine();
+
+        System.out.println("\nRecipes:");
+        for(Recipe recipe : this.recipes) {
+            if(recipe.getName().contains(name)) {
+                System.out.println(recipe);
+            }
+        }
+        System.out.println();
     }
 }
