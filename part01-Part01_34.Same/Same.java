@@ -9,7 +9,7 @@ public class Same {
         System.out.println("Enter the second string:");
         String second = scanner.nextLine();
         
-        if(first.equals(second)) {
+        if (first.equals(second)) {
             System.out.println("Same");
         } else {
             System.out.println("Different");
