@@ -6,7 +6,7 @@ public class Ancient {
 
         System.out.println("Give a year:");
         int year = Integer.valueOf(scanner.nextLine());
-        if(year < 2015) {
+        if (year < 2015) {
             System.out.println("Ancient history!");
         }
 
