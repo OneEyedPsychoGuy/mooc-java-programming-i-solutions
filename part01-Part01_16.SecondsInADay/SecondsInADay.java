@@ -6,8 +6,7 @@ public class SecondsInADay {
 
         System.out.println("How many days would you like to convert to seconds?");
         int days = Integer.valueOf(scanner.nextLine());
-        int seconds = days * 86400;
-        System.out.println(seconds);
+        System.out.println(days * 86400);
         
         scanner.close();
     }
