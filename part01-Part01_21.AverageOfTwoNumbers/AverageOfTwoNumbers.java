@@ -9,8 +9,7 @@ public class AverageOfTwoNumbers {
         System.out.println("Give the second number:");
         int second = Integer.valueOf(scanner.nextLine());
 
-        double average = (first + second) / 2.0;
-        System.out.println("The average is " + average);
+        System.out.println("The average is " + (first + second) / 2.0);
 
         scanner.close();
     }
