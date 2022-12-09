@@ -6,7 +6,7 @@ public class Orwell {
 
         System.out.println("Give a number:");
         int year = Integer.valueOf(scanner.nextLine());
-        if(year == 1984) {
+        if (year == 1984) {
             System.out.println("Orwell");
         }
 
