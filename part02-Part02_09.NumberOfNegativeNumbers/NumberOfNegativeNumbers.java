@@ -9,12 +9,10 @@ public class NumberOfNegativeNumbers {
         while(num != 0) {
             System.out.println("Give a number:");
             num = Integer.valueOf(scanner.nextLine());
-
             if(num < 0) {
                 count++;
             }
         }
-        
         System.out.println("Number of negative numbers: " + count);
 
         scanner.close();
