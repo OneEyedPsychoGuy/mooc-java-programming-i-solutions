@@ -5,9 +5,9 @@ public class Reprint {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("How many times?");
-        int num = Integer.valueOf(scanner.nextLine());
+        int times = Integer.valueOf(scanner.nextLine());
 
-        for(int i = 0; i < num; i++) {
+        for(int i = 0; i < times; i++) {
             printText();
         }
 
