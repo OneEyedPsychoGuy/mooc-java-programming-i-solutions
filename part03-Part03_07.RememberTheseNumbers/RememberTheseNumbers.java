@@ -14,10 +14,7 @@ public class RememberTheseNumbers {
             nums.add(num);
         }
 
-        for(Integer num : nums) {
-            System.out.println(num);
-        }
-
+        nums.forEach(System.out::println);
         scanner.close();
     }
 }
