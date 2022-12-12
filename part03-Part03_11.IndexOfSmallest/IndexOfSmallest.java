@@ -4,27 +4,27 @@ import java.util.Scanner;
 public class IndexOfSmallest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Integer> list = new ArrayList<>();
+        ArrayList<Integer> nums = new ArrayList<>();
 
         while (true) {
             int num = Integer.valueOf(scanner.nextLine());
             if (num == 9999) {
                 break;
             }
-            list.add(num);
+            nums.add(num);
         }
-        System.out.println("");
+        System.out.println();
 
-        int smallest = list.get(0);
-        for(Integer num : list) {
+        int smallest = nums.get(0);
+        for(Integer num : nums) {
             if(num < smallest) {
                 smallest = num;
             }
         }
         System.out.println("Smallest number: " + smallest);
 
-        for(int i = 0; i < list.size(); i++) {
-            if(smallest == list.get(i)) {
+        for(int i = 0; i < nums.size(); i++) {
+            if(smallest == nums.get(i)) {
                 System.out.println("Found at index: " + i);
             }
         }
