@@ -4,19 +4,19 @@ import java.util.Scanner;
 public class GreatestInList {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Integer> list = new ArrayList<>();
+        ArrayList<Integer> nums = new ArrayList<>();
 
         while (true) {
             int num = Integer.valueOf(scanner.nextLine());
             if (num == -1) {
                 break;
             }
-            list.add(num);
+            nums.add(num);
         }
-        System.out.println("");
+        System.out.println();
 
-        int greatest = list.get(0);
-        for(Integer num : list) {
+        int greatest = nums.get(0);
+        for(Integer num : nums) {
             if(num > greatest) {
                 greatest = num;
             }
