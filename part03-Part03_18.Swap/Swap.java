@@ -13,7 +13,7 @@ public class Swap {
         for(Integer num : array) {
             System.out.println(num);
         }
-        System.out.println("");
+        System.out.println();
 
         System.out.println("Give two indices to swap:");
         int first = Integer.valueOf(scanner.nextLine());
@@ -22,8 +22,8 @@ public class Swap {
         int helper = array[first];
         array[first] = array[second];
         array[second] = helper;
-        System.out.println("");
-        
+        System.out.println();
+
         for(Integer num : array) {
             System.out.println(num);
         }
