@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class NameOfTheOldest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String oldestName = "";
+        String name = "";
         int oldest = -1;
 
         while (true) {
@@ -15,12 +15,12 @@ public class NameOfTheOldest {
             String[] data = input.split(",");
             int age = Integer.valueOf(data[1]);
             if(age > oldest) {
-                oldestName = data[0];
+                name = data[0];
                 oldest = age;              
             }
         }
 
-        System.out.println("Name of the oldest: " + oldestName);
+        System.out.println("Name of the oldest: " + name);
         scanner.close();
     }
 }
