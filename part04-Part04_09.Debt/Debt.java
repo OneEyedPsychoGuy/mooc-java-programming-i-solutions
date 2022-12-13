@@ -2,9 +2,9 @@ public class Debt {
     private double balance;
     private double interestRate;
 
-    public Debt(double initialBalance, double initialInterestRate) {
-        this.balance = initialBalance;
-        this.interestRate = initialInterestRate;
+    public Debt(double balance, double interestRate) {
+        this.balance = balance;
+        this.interestRate = interestRate;
     }
 
     public void printBalance() {
