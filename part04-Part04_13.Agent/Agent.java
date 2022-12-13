@@ -2,9 +2,9 @@ public class Agent {
     private String firstName;
     private String lastName;
     
-    public Agent(String initFirstName, String initLastName) {
-        this.firstName = initFirstName;
-        this.lastName = initLastName;
+    public Agent(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
     
     public String toString() {
