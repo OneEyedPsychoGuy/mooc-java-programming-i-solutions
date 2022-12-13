@@ -1,4 +1,6 @@
 public class PaymentCard {
+    private static final double AFFORDABLE = 2.6;
+    private static final double HEARTY = 4.6;
     private double balance;
 
     public PaymentCard(double balance) {
@@ -6,16 +8,14 @@ public class PaymentCard {
     }
 
     public void eatAffordably() {
-        double post = this.balance - 2.60;
-        if(post >= 0) {
-            this.balance = post;
+        if(this.balance >= AFFORDABLE) {
+            this.balance -= AFFORDABLE;
         }
     }
  
     public void eatHeartily() {
-        double post = this.balance - 4.60;
-        if(post >= 0) {
-            this.balance = post;
+        if(this.balance >= HEARTY) {
+            this.balance -= HEARTY;
         }
     }
 
@@ -24,14 +24,13 @@ public class PaymentCard {
             return;
         }
  
-        double post = this.balance + amount;
-        if(post > 150) {
+        this.balance += amount;
+        if(this.balance > 150) {
             this.balance = 150;
-        } else {
-            this.balance = post;
         }
     }
 
+    @Override
     public String toString() {
         return "The card has a balance of " + this.balance + " euros";
     }
