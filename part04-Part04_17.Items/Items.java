@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class Items {
     public static void main(String[] args) {
-        ArrayList<Item> items = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
+        ArrayList<Item> items = new ArrayList<>();
 
         while (true) {
             System.out.print("Name: ");
@@ -14,12 +14,9 @@ public class Items {
             }
             items.add(new Item(item));
         }
-        System.out.println("");
+        System.out.println();
 
-        for(Item item : items) {
-            System.out.println(item);
-        }
-
+        items.forEach(System.out::println);
         scanner.close();
     }
 }
