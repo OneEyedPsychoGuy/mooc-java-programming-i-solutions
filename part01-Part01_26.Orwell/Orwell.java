@@ -8,7 +8,7 @@ public class Orwell {
         int year = Integer.valueOf(scanner.nextLine());
         scanner.close();
         
-        if (year == 1984) {
+        if(year == 1984) {
             System.out.println("Orwell");
         }
     }
