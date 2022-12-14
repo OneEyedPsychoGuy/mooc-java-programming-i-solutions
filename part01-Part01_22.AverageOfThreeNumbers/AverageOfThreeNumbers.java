@@ -10,9 +10,8 @@ public class AverageOfThreeNumbers {
         int second = Integer.valueOf(scanner.nextLine());
         System.out.println("Give the third number:");
         int third = Integer.valueOf(scanner.nextLine());
+        scanner.close();
 
         System.out.println("The average is " + (first + second + third) / 3.0);
-
-        scanner.close();
     }
 }
