@@ -3,10 +3,10 @@ import java.util.Scanner;
 
 public class PersonalInformationCollection {
     public static void main(String[] args) {
-        ArrayList<PersonalInformation> infoCollection = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
+        ArrayList<PersonalInformation> infoCollection = new ArrayList<>();
 
-        while (true) {
+        while(true) {
             System.out.print("First name: ");
             String firstName = scanner.nextLine();
             if (firstName.isEmpty()) {
@@ -21,12 +21,9 @@ public class PersonalInformationCollection {
         
             infoCollection.add(new PersonalInformation(firstName, lastName, id));
         }
+        scanner.close();
         System.out.println();
 
-        for(PersonalInformation info : infoCollection) {
-            System.out.println(info.getFirstName() + " " + info.getLastName());
-        }
-
-        scanner.close();
+        infoCollection.forEach(info -> System.out.println(info.getFirstName() + " " + info.getLastName()));
     }
 }
