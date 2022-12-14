@@ -6,13 +6,12 @@ public class OddOrEven {
 
         System.out.println("Give a number:");
         int value = Integer.valueOf(scanner.nextLine());
+        scanner.close();
         
         if(value % 2 == 0) {
             System.out.println("Number " + value + " is even.");
         } else {
             System.out.println("Number " + value + " is odd.");
         }
-
-        scanner.close();
     }
 }
