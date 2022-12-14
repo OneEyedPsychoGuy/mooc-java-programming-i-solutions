@@ -10,12 +10,11 @@ public class Story {
         String name = scanner.nextLine();
         System.out.println("What is their job?");
         String job = scanner.nextLine();
+        scanner.close();
 
         System.out.println("Here is the story:");
         System.out.println("Once upon a time there was " + name + ", who was " + job + ".");
         System.out.println("On the way to work, " + name + " reflected on life.");
         System.out.println("Perhaps " + name + " will not be " + job +  " forever.");
-    
-        scanner.close();
     }
 }
