@@ -12,12 +12,11 @@ public class DifferentTypesOfInput {
         double floatingPoint = Double.valueOf(scanner.nextLine());
         System.out.println("Give a boolean:");
         boolean trueOrFalse = Boolean.valueOf(scanner.nextLine());
+        scanner.close();
         
         System.out.println("You gave the string " + string);
         System.out.println("You gave the integer " + integer);
         System.out.println("You gave the double " + floatingPoint);
         System.out.println("You gave the boolean " + trueOrFalse);
-        
-        scanner.close();
     }
 }
