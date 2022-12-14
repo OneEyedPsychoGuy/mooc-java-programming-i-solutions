@@ -3,11 +3,12 @@ import java.util.Scanner;
 public class GradesAndPoints {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String grade = "";
 
         System.out.println("Give points [0-100]:");
         int points = Integer.valueOf(scanner.nextLine());
+        scanner.close();
 
+        String grade = "";
         if(points < 0) {
             grade = "impossible";
         } else if(points < 50) {
@@ -27,7 +28,5 @@ public class GradesAndPoints {
         }
 
         System.out.println("Grade: " + grade);
-
-        scanner.close();
     }
 }
