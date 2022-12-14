@@ -6,13 +6,12 @@ public class Positivity {
 
         System.out.println("Give a number:");
         int value = Integer.valueOf(scanner.nextLine());
+        scanner.close();
 
-        if (value > 0) {
+        if(value > 0) {
             System.out.println("The number is positive.");
         } else {
             System.out.println("The number is not positive.");
         }
-
-        scanner.close();
     }
 }
