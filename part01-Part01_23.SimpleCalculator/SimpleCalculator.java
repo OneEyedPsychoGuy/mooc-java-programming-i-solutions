@@ -8,12 +8,11 @@ public class SimpleCalculator {
         int first = Integer.valueOf(scanner.nextLine());
         System.out.println("Give the second number:");
         int second = Integer.valueOf(scanner.nextLine());
+        scanner.close();
 
         System.out.println(first + " + " + second + " = " + (first + second));
         System.out.println(first + " - " + second + " = " + (first - second));
         System.out.println(first + " * " + second + " = " + (first * second));
         System.out.println(first + " / " + second + " = " + (1.0 * first / second));
-
-        scanner.close();
     }
 }
