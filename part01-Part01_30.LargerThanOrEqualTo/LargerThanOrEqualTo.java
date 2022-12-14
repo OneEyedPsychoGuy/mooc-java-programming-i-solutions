@@ -8,15 +8,14 @@ public class LargerThanOrEqualTo {
         int first = Integer.valueOf(scanner.nextLine());
         System.out.println("Give the second number:");
         int second = Integer.valueOf(scanner.nextLine());
+        scanner.close();
 
-        if (first > second) {
+        if(first > second) {
             System.out.println("Greater number is: " + first);
-        } else if (first < second) {
+        } else if(first < second) {
             System.out.println("Greater number is: " + second);
         } else {
             System.out.println("The numbers are equal!");
         }
-
-        scanner.close();
     }
 }
