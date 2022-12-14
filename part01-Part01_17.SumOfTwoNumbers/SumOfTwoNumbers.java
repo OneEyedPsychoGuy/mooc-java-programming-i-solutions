@@ -8,9 +8,8 @@ public class SumOfTwoNumbers {
         int first = Integer.valueOf(scanner.nextLine());
         System.out.println("Give the second number:");
         int second = Integer.valueOf(scanner.nextLine());
+        scanner.close();
 
         System.out.println("The sum of the numbers is " + (first + second));
-        
-        scanner.close();
     }
 }
