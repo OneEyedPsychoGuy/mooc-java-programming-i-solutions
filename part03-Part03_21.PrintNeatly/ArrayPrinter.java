@@ -1,6 +1,4 @@
 public class ArrayPrinter {
-    public static void main(String[] args) {}
-
     public static void printNeatly(int[] array) {
         String string = "";
         for(int i = 0; i < array.length - 1; i++) {
