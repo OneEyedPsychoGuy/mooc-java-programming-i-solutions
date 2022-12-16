@@ -18,16 +18,15 @@ public class Swap {
         System.out.println("Give two indices to swap:");
         int first = Integer.valueOf(scanner.nextLine());
         int second = Integer.valueOf(scanner.nextLine());
+        scanner.close();
 
-        int helper = array[first];
+        int temp = array[first];
         array[first] = array[second];
-        array[second] = helper;
+        array[second] = temp;
         System.out.println();
 
         for(Integer num : array) {
             System.out.println(num);
         }
-
-        scanner.close();
     }
 }
