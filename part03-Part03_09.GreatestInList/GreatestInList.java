@@ -6,13 +6,14 @@ public class GreatestInList {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Integer> nums = new ArrayList<>();
 
-        while (true) {
+        while(true) {
             int num = Integer.valueOf(scanner.nextLine());
-            if (num == -1) {
+            if(num == -1) {
                 break;
             }
             nums.add(num);
         }
+        scanner.close();
         System.out.println();
 
         int greatest = nums.get(0);
@@ -23,6 +24,5 @@ public class GreatestInList {
         }
 
         System.out.println("The greatest number: " + greatest);
-        scanner.close();
     }
 }
