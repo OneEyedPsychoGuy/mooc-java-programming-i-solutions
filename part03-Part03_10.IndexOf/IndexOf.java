@@ -6,9 +6,9 @@ public class IndexOf {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Integer> nums = new ArrayList<>();
 
-        while (true) {
+        while(true) {
             int num = Integer.valueOf(scanner.nextLine());
-            if (num == -1) {
+            if(num == -1) {
                 break;
             }
             nums.add(num);
@@ -17,13 +17,12 @@ public class IndexOf {
 
         System.out.println("Search for? ");
         int search = Integer.valueOf(scanner.nextLine());
+        scanner.close();
 
         for(int i = 0; i < nums.size(); i++) {
             if(search == nums.get(i)) {
                 System.out.println(search + " is at index " + i);
             }
         }
-
-        scanner.close();
     }
 }
