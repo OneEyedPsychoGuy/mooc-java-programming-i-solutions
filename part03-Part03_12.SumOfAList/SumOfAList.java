@@ -6,13 +6,14 @@ public class SumOfAList {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Integer> nums = new ArrayList<>();
 
-        while (true) {
+        while(true) {
             int num = Integer.valueOf(scanner.nextLine());
-            if (num == -1) {
+            if(num == -1) {
                 break;
             }
             nums.add(num);
         }
+        scanner.close();
         System.out.println();
 
         int sum = 0;
@@ -21,6 +22,5 @@ public class SumOfAList {
         }
 
         System.out.println("Sum: " + sum);
-        scanner.close();
     }
 }
