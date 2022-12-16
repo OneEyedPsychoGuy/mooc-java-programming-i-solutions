@@ -15,7 +15,7 @@ public class RememberTheseNumbers {
         }
         scanner.close();
 
-        for(int num : nums) {
+        for(Integer num : nums) {
             System.out.println(num);
         }
     }
