@@ -14,22 +14,21 @@ public class IndexWasNotFound {
         array[7] = 7;
 
         System.out.print("Search for? ");
-        int searching = Integer.valueOf(scanner.nextLine());
+        int search = Integer.valueOf(scanner.nextLine());
+        scanner.close();
 
         int index = -1;
         for(int i = 0; i < array.length; i++) {
-            if(array[i] == searching) {
+            if(array[i] == search) {
                 index = i;
                 break;
             }
         }
 
         if(index != -1) {
-            System.out.println(searching + " is at index " + index + ".");
+            System.out.println(search + " is at index " + index + ".");
         } else {
-            System.out.println(searching + " was not found.");
+            System.out.println(search + " was not found.");
         }
-        
-        scanner.close();
     }
 }
