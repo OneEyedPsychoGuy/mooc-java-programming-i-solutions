@@ -6,15 +6,15 @@ public class SecondPlusThird {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Integer> nums = new ArrayList<>();
 
-        while (true) {
+        while(true) {
             int num = Integer.valueOf(scanner.nextLine());
             if (num == 0) {
                 break;
             }
             nums.add(num);
         }
+        scanner.close();
 
         System.out.println(nums.get(1) + nums.get(2));
-        scanner.close();
     }
 }
