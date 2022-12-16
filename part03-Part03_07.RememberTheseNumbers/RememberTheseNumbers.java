@@ -8,7 +8,7 @@ public class RememberTheseNumbers {
 
         while(true) {
             int num = Integer.valueOf(scanner.nextLine());
-            if (num == -1) {
+            if(num == -1) {
                 break;
             }
             nums.add(num);
