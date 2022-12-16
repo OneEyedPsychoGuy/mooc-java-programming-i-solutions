@@ -6,6 +6,7 @@ public class ComparingNumbers {
 
         int first = Integer.valueOf(scanner.nextLine());
         int second = Integer.valueOf(scanner.nextLine());
+        scanner.close();
 
         if(first > second) {
             System.out.println(first + " is greater than " + second);
@@ -14,7 +15,5 @@ public class ComparingNumbers {
         } else {
             System.out.println(first + " is equal to " + second);
         }
-
-        scanner.close();
     }
 }
