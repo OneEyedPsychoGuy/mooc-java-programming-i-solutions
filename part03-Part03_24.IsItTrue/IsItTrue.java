@@ -6,13 +6,12 @@ public class IsItTrue {
 
         System.out.print("Give a string: ");
         String input = scanner.nextLine();
+        scanner.close();
 
         if(input.equals("true")) {
             System.out.println("You got it right?");
         } else {
             System.out.println("Try again!");
         }
-
-        scanner.close();
     }
 }
