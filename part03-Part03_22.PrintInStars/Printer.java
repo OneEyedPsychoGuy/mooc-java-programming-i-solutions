@@ -1,10 +1,9 @@
 public class Printer {
-    public static void main(String[] args) {}
-
     public static void printArrayInStars(int[] array) {
-        for(int num : array) {
-            for(int stars = 0; stars < num; stars++) {
+        for(int stars : array) {
+            while(stars > 0) {
                 System.out.print("*");
+                stars--;
             }
             System.out.println();
         }
