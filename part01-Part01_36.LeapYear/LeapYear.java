@@ -6,13 +6,12 @@ public class LeapYear {
 
         System.out.print("Give a year: ");
         int year = Integer.valueOf(scanner.nextLine());
+        scanner.close();
 
-        if (year % 4 == 0 && (year % 400 == 0 || year % 100 != 0)) {
+        if(year % 4 == 0 && (year % 400 == 0 || year % 100 != 0)) {
             System.out.println("The year is a leap year.");
         } else {
             System.out.println("The year is not a leap year.");
         }
-
-        scanner.close();
     }
 }
