@@ -6,7 +6,7 @@ public class OnlyTheseNumbers {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Integer> nums = new ArrayList<>();
 
-        while (true) {
+        while(true) {
             int num = Integer.valueOf(scanner.nextLine());
             if(num == -1) {
                 break;
