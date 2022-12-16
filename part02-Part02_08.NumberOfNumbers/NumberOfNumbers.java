@@ -11,8 +11,8 @@ public class NumberOfNumbers {
             number = Integer.valueOf(scanner.nextLine());
             count++;
         }
-        System.out.println("Number of numbers: " + count);
-
         scanner.close();
+
+        System.out.println("Number of numbers: " + count);
     }
 }
