@@ -13,8 +13,8 @@ public class NumberOfNegativeNumbers {
                 count++;
             }
         }
-        System.out.println("Number of negative numbers: " + count);
-
         scanner.close();
+        
+        System.out.println("Number of negative numbers: " + count);
     }
 }
