@@ -6,10 +6,10 @@ public class PrintThrice {
 
         System.out.print("Give a word: ");
         String word = scanner.nextLine();
+        scanner.close();
 
         for(int i = 0; i < 3; i++) {
             System.out.print(word);
         }
-        scanner.close();
     }
 }
