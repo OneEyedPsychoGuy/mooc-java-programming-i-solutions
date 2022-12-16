@@ -6,6 +6,7 @@ public class GiftTax {
 
         System.out.println("Value of the gift?");
         int value = Integer.valueOf(scanner.nextLine());
+        scanner.close();
 
         if(value < 5000) {
             System.out.println("No tax!");
@@ -26,7 +27,5 @@ public class GiftTax {
 
             System.out.println("Tax: " + tax);
         }
-
-        scanner.close();
     }
 }
