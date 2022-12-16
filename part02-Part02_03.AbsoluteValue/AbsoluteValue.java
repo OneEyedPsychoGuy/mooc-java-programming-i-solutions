@@ -5,11 +5,11 @@ public class AbsoluteValue {
         Scanner scanner = new Scanner(System.in);
 
         int number = Integer.valueOf(scanner.nextLine());
+        scanner.close();
+        
         if(number < 0) {
             number *= -1;
         }
         System.out.println(number);
-
-        scanner.close();
     }
 }
