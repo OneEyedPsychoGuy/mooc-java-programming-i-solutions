@@ -1,6 +1,4 @@
 public class StarSign {
-    public static void main(String[] args) {}
-
     public static void printStars(int stars) {
         while(stars > 0) {
             System.out.print("*");
