@@ -6,13 +6,12 @@ public class Password {
 
         System.out.println("Password?");
         String password = scanner.nextLine();
+        scanner.close();
 
         if(password.equals("Caput Draconis")) {
             System.out.println("Welcome!");
         } else {
             System.out.println("Off with you!");
         }
-
-        scanner.close();
     }
 }
