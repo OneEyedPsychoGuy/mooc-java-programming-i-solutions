@@ -11,10 +11,9 @@ public class IoobProgram {
         lines.add("you and I have even heard of the quantum theory and atomic structures. Bohr came");
         lines.add("up with his quantum theory while studying...");
 
-        for (String line : lines) {
+        for(String line : lines) {
             System.out.println(line);
         }
-
         lines.get(-1); // This throws an IndexOutOfBoundsException
     }
 }
