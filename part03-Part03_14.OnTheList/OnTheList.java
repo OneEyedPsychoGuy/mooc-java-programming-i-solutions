@@ -6,9 +6,9 @@ public class OnTheList {
         Scanner scanner = new Scanner(System.in);
         ArrayList<String> list = new ArrayList<>();
 
-        while (true) {
+        while(true) {
             String input = scanner.nextLine();
-            if (input.equals("")) {
+            if(input.equals("")) {
                 break;
             }
             list.add(input);
@@ -16,13 +16,12 @@ public class OnTheList {
 
         System.out.println("Search for? ");
         String search = scanner.nextLine();
+        scanner.close();
         
         if(list.contains(search)) {
             System.out.println(search + " was found!");
         } else {
             System.out.println(search + " was not found!");
         }
-
-        scanner.close();
     }
 }
