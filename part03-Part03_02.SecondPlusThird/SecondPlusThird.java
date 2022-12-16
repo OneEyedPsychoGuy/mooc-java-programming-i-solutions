@@ -8,7 +8,7 @@ public class SecondPlusThird {
 
         while(true) {
             int num = Integer.valueOf(scanner.nextLine());
-            if (num == 0) {
+            if(num == 0) {
                 break;
             }
             nums.add(num);
