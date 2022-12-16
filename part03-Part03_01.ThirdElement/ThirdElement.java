@@ -8,7 +8,7 @@ public class ThirdElement {
 
         while(true) {
             String input = scanner.nextLine();
-            if (input.equals("")) {
+            if(input.equals("")) {
                 break;
             }
             list.add(input);
