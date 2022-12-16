@@ -13,8 +13,8 @@ public class ListSize {
             }
             list.add(input);
         }
+        scanner.close();
 
         System.out.println("In total: " + list.size());
-        scanner.close();
     }
 }
