@@ -7,12 +7,11 @@ public class SumOfASequence {
         
         System.out.print("Last number? ");
         int last = Integer.valueOf(scanner.nextLine());
+        scanner.close();
 
         for(int i = 1; i <= last; i++) {
             sum += i;
         }
         System.out.println("The sum is " + sum);
-
-        scanner.close();
     }
 }
