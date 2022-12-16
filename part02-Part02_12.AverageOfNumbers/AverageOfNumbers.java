@@ -13,8 +13,8 @@ public class AverageOfNumbers {
             count++;
             sum += num;
         }
-        System.out.println("Average of the numbers: " + (1.0 * sum / count));
-
         scanner.close();
+        
+        System.out.println("Average of the numbers: " + (1.0 * sum / count));
     }
 }
