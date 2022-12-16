@@ -6,9 +6,8 @@ public class SquareRootOfSum {
 
         int first = Integer.valueOf(scanner.nextLine());
         int second = Integer.valueOf(scanner.nextLine());
+        scanner.close();
 
         System.out.println(Math.sqrt(first + second));
-
-        scanner.close();
     }
 }
