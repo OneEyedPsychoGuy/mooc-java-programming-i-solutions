@@ -6,13 +6,14 @@ public class IndexOfSmallest {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Integer> nums = new ArrayList<>();
 
-        while (true) {
+        while(true) {
             int num = Integer.valueOf(scanner.nextLine());
-            if (num == 9999) {
+            if(num == 9999) {
                 break;
             }
             nums.add(num);
         }
+        scanner.close();
         System.out.println();
 
         int smallest = nums.get(0);
@@ -28,7 +29,5 @@ public class IndexOfSmallest {
                 System.out.println("Found at index: " + i);
             }
         }
-
-        scanner.close();
     }
 }
