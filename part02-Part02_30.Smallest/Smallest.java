@@ -1,10 +1,8 @@
 public class Smallest {
-    public static void main(String[] args) {}
-
-    public static int smallest(int number1, int number2) {
-        if(number1 < number2) {
-            return number1;
+    public static int smallest(int num1, int num2) {
+        if(num1 < num2) {
+            return num1;
         }
-        return number2;
+        return num2;
     }
 }
