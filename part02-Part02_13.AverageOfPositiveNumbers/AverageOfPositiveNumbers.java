@@ -15,13 +15,12 @@ public class AverageOfPositiveNumbers {
                 sum += num;
             }
         }
+        scanner.close();
 
         if(count > 0) {
             System.out.println(1.0 * sum / count);
         } else {
             System.out.println("Cannot calculate the average");
         }
-
-        scanner.close();
     }
 }
