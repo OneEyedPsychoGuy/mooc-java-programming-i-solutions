@@ -6,12 +6,11 @@ public class Reprint {
 
         System.out.println("How many times?");
         int times = Integer.valueOf(scanner.nextLine());
+        scanner.close();
 
         for(int i = 0; i < times; i++) {
             printText();
         }
-
-        scanner.close();
     }
     
     public static void printText() {
