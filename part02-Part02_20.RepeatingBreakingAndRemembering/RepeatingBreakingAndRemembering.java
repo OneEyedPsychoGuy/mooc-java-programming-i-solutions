@@ -18,6 +18,7 @@ public class RepeatingBreakingAndRemembering {
                 evenCount++;
             }
         }
+        scanner.close();
 
         System.out.println("Thx! Bye!");
         System.out.println("Sum: " + sum);
@@ -25,7 +26,5 @@ public class RepeatingBreakingAndRemembering {
         System.out.println("Average: " + (1.0 * sum / count));
         System.out.println("Even: " + evenCount);
         System.out.println("Odd: " + (count - evenCount));
-
-        scanner.close();
     }
 }
