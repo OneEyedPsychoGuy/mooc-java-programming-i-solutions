@@ -7,12 +7,11 @@ public class Factorial {
 
         System.out.print("Give a number: ");
         int num = Integer.valueOf(scanner.nextLine());
+        scanner.close();
 
         for(int i = 1; i <= num; i++) {
             fact *= i;
         }
         System.out.println("Factorial: " + fact);
-
-        scanner.close();
     }
 }
