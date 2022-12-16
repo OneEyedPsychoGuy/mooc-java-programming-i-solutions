@@ -11,8 +11,8 @@ public class SumOfNumbers {
             num = Integer.valueOf(scanner.nextLine());
             sum += num;
         }
-        System.out.println("Sum of the numbers: " + sum);
-
         scanner.close();
+        
+        System.out.println("Sum of the numbers: " + sum);
     }
 }
