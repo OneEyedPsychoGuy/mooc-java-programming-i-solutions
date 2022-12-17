@@ -15,7 +15,6 @@ public class PersonalInformationCollection {
         
             System.out.print("Last name: ");
             String lastName = scanner.nextLine();
-
             System.out.print("Identification number: ");
             String id = scanner.nextLine();
         
@@ -24,6 +23,8 @@ public class PersonalInformationCollection {
         scanner.close();
         System.out.println();
 
-        infoCollection.forEach(info -> System.out.println(info.getFirstName() + " " + info.getLastName()));
+        for(PersonalInformation info : infoCollection) {
+            System.out.println(info.getFirstName() + " " + info.getLastName());
+        }
     }
 }

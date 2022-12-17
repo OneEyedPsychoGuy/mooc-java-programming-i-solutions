@@ -6,17 +6,19 @@ public class Items {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Item> items = new ArrayList<>();
 
-        while (true) {
+        while(true) {
             System.out.print("Name: ");
             String item = scanner.nextLine();
-            if (item.isEmpty()) {
+            if(item.isEmpty()) {
                 break;
             }
             items.add(new Item(item));
         }
+        scanner.close();
         System.out.println();
 
-        items.forEach(System.out::println);
-        scanner.close();
+        for(Item item : items) {
+            System.out.println(item);
+        }
     }
 }
