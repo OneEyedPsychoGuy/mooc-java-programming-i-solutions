@@ -15,7 +15,6 @@ public class LineByLine {
                 System.out.println(word);
             }
         }
-
         scanner.close();
     }
 }
