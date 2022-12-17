@@ -8,6 +8,7 @@ public class Login {
         String username = scanner.nextLine();
         System.out.print("Enter password: ");
         String password = scanner.nextLine();
+        scanner.close();
 
         boolean alex = username.equals("alex") && password.equals("sunshine");
         boolean emma = username.equals("emma") && password.equals("haskell");
@@ -17,7 +18,5 @@ public class Login {
         } else {
             System.out.println("Incorrect username or password!");
         }
-
-        scanner.close();
     }
 }
