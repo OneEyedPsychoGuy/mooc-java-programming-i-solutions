@@ -7,16 +7,16 @@ public class TelevisionProgram {
         this.duration = duration;
     }
 
-    public boolean isAwesome() {
-        return this.name.contains("MasterChef");
-    }
-
     public String getName() {
         return name;
     }
 
     public int getDuration() {
         return duration;
+    }
+
+    public boolean isAwesome() {
+        return this.name.contains("MasterChef");
     }
 
     @Override
