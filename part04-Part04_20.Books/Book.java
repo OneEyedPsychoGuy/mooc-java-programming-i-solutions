@@ -1,11 +1,11 @@
 public class Book {
     private String title;
-    private int numOfPages;
+    private int pages;
     private int publicationYear;
 
-    public Book(String title, int numOfPages, int publicationYear) {
+    public Book(String title, int pages, int publicationYear) {
         this.title = title;
-        this.numOfPages = numOfPages;
+        this.pages = pages;
         this.publicationYear = publicationYear;
     }
 
@@ -15,6 +15,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return this.title + ", " + this.numOfPages + " pages, " + this.publicationYear;
+        return this.title + ", " + this.pages + " pages, " + this.publicationYear;
     }
 }
