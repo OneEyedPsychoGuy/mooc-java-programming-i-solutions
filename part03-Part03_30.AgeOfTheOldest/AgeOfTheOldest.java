@@ -5,9 +5,9 @@ public class AgeOfTheOldest {
         Scanner scanner = new Scanner(System.in);
         int oldest = -1;
 
-        while (true) {
+        while(true) {
             String input = scanner.nextLine();
-            if (input.equals("")) {
+            if(input.equals("")) {
                 break;
             }
 
@@ -17,8 +17,8 @@ public class AgeOfTheOldest {
                 oldest = age;
             }
         }
+        scanner.close();
 
         System.out.println("Age of the oldest: " + oldest);
-        scanner.close();
     }
 }
