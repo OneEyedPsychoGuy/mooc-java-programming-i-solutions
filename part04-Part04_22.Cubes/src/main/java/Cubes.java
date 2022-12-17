@@ -11,9 +11,8 @@ public class Cubes {
             }
 
             int num = Integer.valueOf(input);
-            System.out.println((int) Math.pow(num, 3));
+            System.out.println(num * num * num);
         }
-
         scanner.close();
     }
 }
