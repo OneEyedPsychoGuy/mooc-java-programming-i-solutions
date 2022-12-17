@@ -12,8 +12,8 @@ public class NumberOfStrings {
             }
             count++;
         }
+        scanner.close();
         
         System.out.println(count);
-        scanner.close();
     }
 }
