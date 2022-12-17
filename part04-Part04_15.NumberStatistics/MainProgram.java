@@ -21,10 +21,10 @@ public class MainProgram {
                 statOdd.addNumber(answer);
             }
         }
+        scanner.close();
  
         System.out.println("Sum: " + statAll.sum());
         System.out.println("Sum of even numbers: " + statEven.sum());
         System.out.println("Sum of odd numbers: " + statOdd.sum());
-        scanner.close();
     }
 }
