@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class PrintingASpecifiedFile {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in);
 
         System.out.println("Which file should have its contents printed?");
-        String file = scanner.nextLine();
-        scanner.close();
+        String file = keyboard.nextLine();
+        keyboard.close();
 
         try(Scanner fileReader = new Scanner(Paths.get(file))) {
             while(fileReader.hasNextLine()) {
