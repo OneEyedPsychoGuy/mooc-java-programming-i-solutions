@@ -4,19 +4,21 @@ import java.util.Scanner;
 
 public class IsItInTheFile {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in);
 
         System.out.println("Name of the file:");
-        String file = scanner.nextLine();
+        String file = keyboard.nextLine();
         System.out.println("Search for:");
-        String searchFor = scanner.nextLine();
+        String search = keyboard.nextLine();
+        keyboard.close();
 
         try(Scanner fileReader = new Scanner(Paths.get(file))) {
             boolean found = false;
 
             while(fileReader.hasNextLine()) {
-                if(fileReader.nextLine().equals(searchFor)) {
+                if(fileReader.nextLine().equals(search)) {
                     found = true;
+                    break;
                 }
             }
 
@@ -25,10 +27,8 @@ public class IsItInTheFile {
             } else {
                 System.out.println("Not found.");
             }
-        } catch (IOException e) {
+        } catch(IOException e) {
             System.out.println("Reading the file " + file + " failed.");
         }
-
-        scanner.close();
     }
 }
