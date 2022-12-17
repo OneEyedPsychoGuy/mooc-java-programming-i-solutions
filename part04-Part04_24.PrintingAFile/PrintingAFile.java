@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class PrintingAFile {
     public static void main(String[] args) {
-        try(Scanner scanner = new Scanner(Paths.get("data.txt"))) {
-            while(scanner.hasNextLine()) {
-                System.out.println(scanner.nextLine());
+        try(Scanner fileReader = new Scanner(Paths.get("data.txt"))) {
+            while(fileReader.hasNextLine()) {
+                System.out.println(fileReader.nextLine());
             }
-        } catch (IOException e) {
+        } catch(IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
