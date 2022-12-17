@@ -13,7 +13,6 @@ public class LastWords {
             String[] words = input.split(" ");
             System.out.println(words[words.length - 1]);
         }
-
         scanner.close();
     }
 }
