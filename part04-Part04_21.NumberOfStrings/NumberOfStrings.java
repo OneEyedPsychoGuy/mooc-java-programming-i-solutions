@@ -6,8 +6,8 @@ public class NumberOfStrings {
         int count = 0;
 
         while(true) {
-            String text = scanner.nextLine();
-            if(text.equals("end")) {
+            String input = scanner.nextLine();
+            if(input.equals("end")) {
                 break;
             }
             count++;
