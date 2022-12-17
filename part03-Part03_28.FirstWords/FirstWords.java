@@ -13,7 +13,6 @@ public class FirstWords {
             String[] words = input.split(" ");
             System.out.println(words[0]);
         }
-
         scanner.close();
     }
 }
