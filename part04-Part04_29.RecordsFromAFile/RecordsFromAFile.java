@@ -4,20 +4,19 @@ import java.util.Scanner;
 
 public class RecordsFromAFile {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in);
 
         System.out.println("Name of the file:");
-        String file = scanner.nextLine();
+        String file = keyboard.nextLine();
+        keyboard.close();
 
         try(Scanner fileReader = new Scanner(Paths.get(file))) {
             while(fileReader.hasNextLine()) {
-                String[] row = fileReader.nextLine().split(",");
-                System.out.println(row[0] + ", age: " + row[1] + (row[1].equals("1") ? " year" : " years"));
+                String[] parts = fileReader.nextLine().split(",");
+                System.out.println(parts[0] + ", age: " + parts[1] + (parts[1].equals("1") ? " year" : " years"));
             }
-        } catch (IOException e) {
+        } catch(IOException e) {
             System.out.println("Reading the file " + file + " failed.");
         }
-
-        scanner.close();
     }
 }
