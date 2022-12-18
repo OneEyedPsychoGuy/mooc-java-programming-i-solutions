@@ -21,13 +21,9 @@ public class Song {
 
         Song comparedSong = (Song) compared;
 
-        if(this.artist.equals(comparedSong.artist) &&
+        return this.artist.equals(comparedSong.artist) &&
             this.title.equals(comparedSong.title) &&
-            this.durationInSeconds == comparedSong.durationInSeconds) {
-            return true;
-        }
-
-        return false;
+            this.durationInSeconds == comparedSong.durationInSeconds;
     }
 
     @Override
