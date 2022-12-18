@@ -55,6 +55,6 @@ public class PaymentTerminal {
  
     @Override
     public String toString() {
-        return "money: " + money + ", number of sold affordable meals: " + affordableMeals + ", number of sold hearty meals: " + heartyMeals;
+        return "money: " + this.money + ", number of sold affordable meals: " + this.affordableMeals + ", number of sold hearty meals: " + this.heartyMeals;
     }
 }
