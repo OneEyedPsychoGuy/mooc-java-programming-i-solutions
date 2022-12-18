@@ -1,9 +1,4 @@
-/*
- *  Do not change the behavior of this class
- */
-
 public class Person {
-
     private String name;
     private int age;
     private int height;
@@ -16,24 +11,8 @@ public class Person {
         this.weight = weight;
     }
 
-    public void printPerson() {
-        System.out.println("My name is " + this.name + " and I am " + this.age + " years old");
-    }
-
-    public void growOlder() {
-        this.age++;
-    }
-
-    public boolean isOfLegalAge() {
-        if (this.age > 17) {
-            return true;
-        }
-
-        return false;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
+    public String getName() {
+        return this.name;
     }
 
     public int getHeight() {
@@ -44,18 +23,32 @@ public class Person {
         return this.weight;
     }
 
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
     public void setWeight(int weight) {
         this.weight = weight;
     }
 
+    public void growOlder() {
+        this.age++;
+    }
+
+    public boolean isOfLegalAge() {
+        if(this.age >= 18) {
+            return true;
+        }
+        return false;
+    }
+
     public double bmi() {
         double heightInMeters = this.height / 100.0;
-
         return this.weight / (heightInMeters * heightInMeters);
     }
 
-    public String getName() {
-        return this.name;
+    public void printPerson() {
+        System.out.println("My name is " + this.name + " and I am " + this.age + " years old");
     }
 
     @Override
