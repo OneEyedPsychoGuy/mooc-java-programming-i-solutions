@@ -14,10 +14,14 @@ public class Apartment {
     }
 
     public int priceDifference(Apartment compared) {
-        return Math.abs((this.squareInches * this.pricePerSquareInch) - (compared.squareInches * compared.pricePerSquareInch));
+        return Math.abs(this.price() - compared.price());
     }
 
     public boolean moreExpensiveThan(Apartment compared) {
-        return (this.squareInches * this.pricePerSquareInch) > (compared.squareInches * compared.pricePerSquareInch);
+        return this.price() > compared.price();
+    }
+
+    private int price() {
+        return this.squareInches * this.pricePerSquareInch;
     }
 }
