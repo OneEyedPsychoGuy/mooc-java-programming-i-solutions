@@ -1,14 +1,15 @@
 public class Song {
     private String artist;
-    private String name;
+    private String title;
     private int durationInSeconds;
 
-    public Song(String artist, String name, int durationInSeconds) {
+    public Song(String artist, String title, int durationInSeconds) {
         this.artist = artist;
-        this.name = name;
+        this.title = title;
         this.durationInSeconds = durationInSeconds;
     }
 
+    @Override
     public boolean equals(Object compared) {
         if(this == compared) {
             return true;
@@ -21,7 +22,7 @@ public class Song {
         Song comparedSong = (Song) compared;
 
         if(this.artist.equals(comparedSong.artist) &&
-            this.name.equals(comparedSong.name) &&
+            this.title.equals(comparedSong.title) &&
             this.durationInSeconds == comparedSong.durationInSeconds) {
             return true;
         }
@@ -31,6 +32,6 @@ public class Song {
 
     @Override
     public String toString() {
-        return this.artist + ": " + this.name + " (" + this.durationInSeconds + " s)";
+        return this.artist + ": " + this.title + " (" + this.durationInSeconds + " s)";
     }
 }
