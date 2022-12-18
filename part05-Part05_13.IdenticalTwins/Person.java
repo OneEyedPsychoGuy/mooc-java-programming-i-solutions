@@ -11,6 +11,7 @@ public class Person {
         this.weight = weight;
     }
 
+    @Override
     public boolean equals(Object compared) {
         if(this == compared) {
             return true;

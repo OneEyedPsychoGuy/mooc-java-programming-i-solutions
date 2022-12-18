@@ -21,6 +21,7 @@ public class SimpleDate {
         return this.year;
     }
 
+    @Override
     public boolean equals(Object compared) {
         if (this == compared) {
             return true;
@@ -30,11 +31,11 @@ public class SimpleDate {
             return false;
         }
 
-        SimpleDate otherDate = (SimpleDate) compared;
+        SimpleDate comparedDate = (SimpleDate) compared;
 
-        if (this.day == otherDate.day
-                && this.month == otherDate.month
-                && this.year == otherDate.year) {
+        if (this.day == comparedDate.day && 
+            this.month == comparedDate.month &&
+            this.year == comparedDate.year) {
             return true;
         }
 
