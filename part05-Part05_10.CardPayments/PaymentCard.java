@@ -9,16 +9,15 @@ public class PaymentCard {
         return this.balance;
     }
 
-    public void addMoney(double increase) {
-        this.balance += increase;
+    public void addMoney(double amount) {
+        this.balance += amount;
     }
 
     public boolean takeMoney(double amount) {
-        double finalAmount = this.balance - amount;
-        if(finalAmount >= 0) {
-            this.balance = finalAmount;
-            return true;
+        if(this.balance < amount) {
+            return false;
         }
-        return false;
+        this.balance -= amount;
+        return true;
     }
 }
