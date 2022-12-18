@@ -4,12 +4,13 @@ import java.util.Scanner;
 
 public class SportStatistics {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in);
 
         System.out.println("File:");
-        String file = scanner.nextLine();
+        String file = keyboard.nextLine();
         System.out.println("Team:");
-        String team = scanner.nextLine();
+        String search = keyboard.nextLine();
+        keyboard.close();
 
         try(Scanner fileReader = new Scanner(Paths.get(file))) {
             int games = 0;
@@ -18,17 +19,17 @@ public class SportStatistics {
 
             while(fileReader.hasNextLine()) {
                 String line = fileReader.nextLine();
-                String[] row = line.split(",");
+                String[] parts = line.split(",");
                     
-                String homeTeam = row[0];
-                String visitingTeam = row[1];
-                int homeTeamPoints = Integer.valueOf(row[2]);
-                int visitingTeamPoints = Integer.valueOf(row[3]);
+                String home = parts[0];
+                String visiting = parts[1];
+                int homePoints = Integer.valueOf(parts[2]);
+                int visitingPoints = Integer.valueOf(parts[3]);
 
-                if(line.contains(team)) {
+                if(line.contains(search)) {
                     games++;
-                    if(homeTeam.equals(team) && homeTeamPoints > visitingTeamPoints ||
-                    visitingTeam.equals(team) && visitingTeamPoints > homeTeamPoints) {
+                    if(home.equals(search) && homePoints > visitingPoints ||
+                    visiting.equals(search) && visitingPoints > homePoints) {
                         wins++;
                     } else {
                         losses++;
@@ -39,10 +40,8 @@ public class SportStatistics {
             System.out.println("Games: " + games);
             System.out.println("Wins: " + wins);
             System.out.println("Losses: " + losses);
-        } catch (IOException e) {
+        } catch(IOException e) {
             System.out.println("Reading the file " + file + " failed.");
         }
-
-        scanner.close();
     }
 }
