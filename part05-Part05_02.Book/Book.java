@@ -21,6 +21,7 @@ public class Book {
         return this.pages;
     }
 
+    @Override
     public String toString() {
         return this.author + ", " + this.name + ", " + this.pages + " pages";
     }
