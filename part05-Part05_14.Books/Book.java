@@ -16,18 +16,18 @@ public class Book {
     }
 
     @Override
-    public boolean equals(Object compared) {
-        if(this == compared) {
+    public boolean equals(Object obj) {
+        if(this == obj) {
             return true;
         }
 
-        if(!(compared instanceof Book)) {
+        if(!(obj instanceof Book)) {
             return false;
         }
 
-        Book comparedBook = (Book) compared;
+        Book book = (Book) obj;
 
-        return this.name.equals(comparedBook.name) && 
-            this.publicationYear == comparedBook.publicationYear;
+        return this.name.equals(book.name) && 
+            this.publicationYear == book.publicationYear;
     }
 }
