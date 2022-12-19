@@ -3,7 +3,6 @@ Pancake dough
 milk
 egg
 flour
-sugar
 salt
 butter
 

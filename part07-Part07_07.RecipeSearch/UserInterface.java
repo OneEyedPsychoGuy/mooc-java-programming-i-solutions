@@ -22,11 +22,10 @@ public class UserInterface {
         while(true) {
             System.out.print("Enter command: ");
             String command = this.keyboard.nextLine();
-            this.processCommand(command);
-
             if(command.equals("stop")) break;
+            this.processCommand(command);
+            System.out.println();
         }
-        System.out.println();
     }
 
     private void processRecipes() {
@@ -44,30 +43,30 @@ public class UserInterface {
 
                 this.recipes.add(new Recipe(name, cookingTime, ingredients));
             }
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
+        } catch(IOException e) {
+            System.out.println("Error: " + e.getMessage());
         }
     }
 
     private Path requestFileToRead() {
-        String fileName = "";
+        String file = "";
         while(true) {
             System.out.print("File to read: ");
-            fileName = this.keyboard.nextLine();
+            file = this.keyboard.nextLine();
             System.out.println();
 
-            if(this.isValidFile(fileName)) {
+            if(this.isValidFile(file)) {
                 break;
             }
 
             System.out.println("File does not exist or is not readable\n");
         }
-        return Paths.get(fileName);
+        return Paths.get(file);
     }
 
-    private boolean isValidFile(String fileName) {
-        final Path filePath = Paths.get(fileName);
-        if(Files.exists(filePath) && Files.isReadable(filePath)) {
+    private boolean isValidFile(String file) {
+        final Path path = Paths.get(file);
+        if(Files.exists(path) && Files.isReadable(path)) {
             return true;
         }
         return false;
@@ -98,10 +97,8 @@ public class UserInterface {
             case "find ingredient":
                 this.findRecipesByIngredient();
                 break;
-            case "stop":
-                break;
             default:
-                System.out.println("\nUnknown command\n");
+                System.out.println("\nUnknown command");
         }
     }
 
@@ -110,7 +107,6 @@ public class UserInterface {
         for(Recipe recipe : this.recipes) {
             System.out.println(recipe);
         }
-        System.out.println();
     }
 
     private void findRecipesByName() {
@@ -123,7 +119,6 @@ public class UserInterface {
                 System.out.println(recipe);
             }
         }
-        System.out.println();
     }
 
     private void findRecipesByCookingTime() {
@@ -136,7 +131,6 @@ public class UserInterface {
                 System.out.println(recipe);
             }
         }
-        System.out.println();
     }
 
     private void findRecipesByIngredient() {
@@ -149,6 +143,5 @@ public class UserInterface {
                 System.out.println(recipe);
             }
         }
-        System.out.println();
     }
 }
