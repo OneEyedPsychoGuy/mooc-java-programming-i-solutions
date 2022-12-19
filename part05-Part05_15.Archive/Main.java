@@ -6,7 +6,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Archive> archives = new ArrayList<>();
 
-        while (true) {
+        while(true) {
             System.out.println("Identifier? (empty will stop)");
             String id = scanner.nextLine();
             if(id.isEmpty()) {
@@ -24,11 +24,11 @@ public class Main {
                 archives.add(archive);
             }
         }
+        scanner.close();
         
         System.out.println("==Items==");
         for(Archive archive : archives) {
             System.out.println(archive);
         }
-        scanner.close();
     }
 }

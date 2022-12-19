@@ -15,10 +15,7 @@ public class Archive {
         return this.title;
     }
 
-    public String toString() {
-        return this.id + ": " + this.title;
-    }
-
+    @Override
     public boolean equals(Object compared) {
         if(this == compared) {
             return true;
@@ -31,5 +28,10 @@ public class Archive {
         Archive comparedArchive = (Archive) compared;
 
         return this.id.equals(comparedArchive.id);
+    }
+
+    @Override
+    public String toString() {
+        return this.id + ": " + this.title;
     }
 }
