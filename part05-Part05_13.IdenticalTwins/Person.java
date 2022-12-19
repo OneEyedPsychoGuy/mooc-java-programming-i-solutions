@@ -12,20 +12,20 @@ public class Person {
     }
 
     @Override
-    public boolean equals(Object compared) {
-        if(this == compared) {
+    public boolean equals(Object obj) {
+        if(this == obj) {
             return true;
         }
 
-        if(!(compared instanceof Person)) {
+        if(!(obj instanceof Person)) {
             return false;
         }
 
-        Person comparedPerson = (Person) compared;
+        Person person = (Person) obj;
 
-        return this.name.equals(comparedPerson.name) &&
-            this.birthday.equals(comparedPerson.birthday) &&
-            this.height == comparedPerson.height &&
-            this.weight == comparedPerson.weight;
+        return this.name.equals(person.name) &&
+            this.birthday.equals(person.birthday) &&
+            this.height == person.height &&
+            this.weight == person.weight;
     }
 }

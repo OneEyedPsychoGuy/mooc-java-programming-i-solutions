@@ -22,20 +22,20 @@ public class SimpleDate {
     }
 
     @Override
-    public boolean equals(Object compared) {
-        if(this == compared) {
+    public boolean equals(Object obj) {
+        if(this == obj) {
             return true;
         }
 
-        if(!(compared instanceof SimpleDate)) {
+        if(!(obj instanceof SimpleDate)) {
             return false;
         }
 
-        SimpleDate comparedDate = (SimpleDate) compared;
+        SimpleDate date = (SimpleDate) obj;
 
-        return this.day == comparedDate.day && 
-            this.month == comparedDate.month &&
-            this.year == comparedDate.year;
+        return this.day == date.day && 
+            this.month == date.month &&
+            this.year == date.year;
     }
 
     @Override
