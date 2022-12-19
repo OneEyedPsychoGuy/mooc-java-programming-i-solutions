@@ -11,12 +11,18 @@ public class Room {
         return this.persons;
     }
 
+    public boolean isEmpty() {
+        return this.persons.isEmpty();
+    }
+
     public void add(Person person) {
         this.persons.add(person);
     }
 
-    public boolean isEmpty() {
-        return this.persons.isEmpty();
+    public Person take() {
+        Person shortest = this.shortest();
+        this.persons.remove(shortest);
+        return shortest;
     }
 
     public Person shortest() {
@@ -26,17 +32,11 @@ public class Room {
 
         Person shortest = this.persons.get(0);
         for(Person person : this.persons) {
-            if(shortest.getHeight() > person.getHeight()) {
+            if(person.getHeight() < shortest.getHeight()) {
                 shortest = person;
             }
         }
 
-        return shortest;
-    }
-
-    public Person take() {
-        Person shortest = this.shortest();
-        this.persons.remove(shortest);
         return shortest;
     }
 }
