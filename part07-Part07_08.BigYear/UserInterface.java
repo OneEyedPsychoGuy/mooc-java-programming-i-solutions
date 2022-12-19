@@ -15,9 +15,8 @@ public class UserInterface {
         while(true) {
             System.out.print("? ");
             String command = this.keyboard.nextLine();
-            this.processCommand(command);
-
             if(command.equals("Quit")) break;
+            this.processCommand(command);
         }
     }
 
@@ -35,8 +34,6 @@ public class UserInterface {
             case "One":
                 this.printOneBird();
                 break;
-            case "Quit":
-                break;
             default:
                 System.out.println("Unknown command");
         }
@@ -44,11 +41,11 @@ public class UserInterface {
 
     private void addBird() {
         System.out.print("Name: ");
-        String englishName = this.keyboard.nextLine();
+        String english = this.keyboard.nextLine();
         System.out.print("Name in Latin: ");
-        String latinName = this.keyboard.nextLine();
+        String latin = this.keyboard.nextLine();
 
-        this.birds.add(new Bird(englishName, latinName));
+        this.birds.add(new Bird(english, latin));
     }
 
     private void addObservation() {
