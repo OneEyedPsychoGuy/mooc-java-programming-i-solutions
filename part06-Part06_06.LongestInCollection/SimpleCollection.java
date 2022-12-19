@@ -9,12 +9,12 @@ public class SimpleCollection {
         this.elements = new ArrayList<>();
     }
 
-    public void add(String element) {
-        this.elements.add(element);
-    }
-
     public ArrayList<String> getElements() {
         return this.elements;
+    }
+
+    public void add(String element) {
+        this.elements.add(element);
     }
 
     public String longest() {
@@ -24,7 +24,7 @@ public class SimpleCollection {
 
         String longest = this.elements.get(0);
         for(String element : this.elements) {
-            if(longest.length() < element.length()) {
+            if(element.length() > longest.length()) {
                 longest = element;
             }
         }
