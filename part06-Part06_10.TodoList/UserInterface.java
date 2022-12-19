@@ -12,11 +12,15 @@ public class UserInterface {
     public void start() {
         String command = "";
 
-        do {
+        while(true) {
             System.out.print("Command: ");
             command = this.scanner.nextLine();
+            if(command.equals("stop")) {
+                break;
+            }
+
             this.processCommand(command);
-        } while(!command.equals("stop"));
+        }
     }
 
     public void processCommand(String command) {
@@ -29,8 +33,6 @@ public class UserInterface {
                 break;
             case "remove":
                 this.remove();
-                break;
-            case "stop":
                 break;
             default:
                 System.out.println("Unknown command");
