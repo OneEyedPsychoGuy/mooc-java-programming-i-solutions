@@ -12,11 +12,17 @@ public class TextUI {
     public void start() {
         String command = "";
 
-        do {
+        while(true) {
             System.out.print("Command: ");
             command = this.scanner.nextLine();
+            if(command.equals("end")) {
+                break;
+            }
+
             this.processCommand(command);
-        } while(!command.equals("end"));
+        }
+
+        System.out.println("Bye bye!");
     }
 
     public void processCommand(String command) {
@@ -26,9 +32,6 @@ public class TextUI {
                 break;
             case "search":
                 this.search();
-                break;
-            case "end":
-                this.end();
                 break;
             default:
                 System.out.println("Unknown command");
@@ -54,9 +57,5 @@ public class TextUI {
         } else {
             System.out.println("Translation: " + translation);
         }
-    }
-
-    public void end() {
-        System.out.println("Bye bye!");
     }
 }
