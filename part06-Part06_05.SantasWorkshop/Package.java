@@ -12,10 +12,10 @@ public class Package {
     }
 
     public int totalWeight() {
-        int totalWeight = 0;
+        int weight = 0;
         for(Gift gift : gifts) {
-            totalWeight += gift.getWeight();
+            weight += gift.getWeight();
         }
-        return totalWeight;
+        return weight;
     }
 }
