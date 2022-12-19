@@ -6,12 +6,12 @@ public class LiquidContainers2 {
         Container first = new Container();
         Container second = new Container();
 
-        while (true) {
+        while(true) {
             System.out.println("First: " + first);
             System.out.println("Second: " + second);
 
             String input = scanner.nextLine();
-            if (input.equals("quit")) {
+            if(input.equals("quit")) {
                 break;
             }
 
@@ -30,6 +30,7 @@ public class LiquidContainers2 {
 
                     first.remove(amount);
                     second.add(amount);
+
                     break;
                 case "remove":
                     second.remove(amount);
@@ -38,7 +39,7 @@ public class LiquidContainers2 {
                     System.out.println("Unknown command");
             }
 
-            System.out.println("");
+            System.out.println();
         }
         scanner.close();
     }
