@@ -16,18 +16,8 @@ public class Archive {
     }
 
     @Override
-    public boolean equals(Object compared) {
-        if(this == compared) {
-            return true;
-        }
-
-        if(!(compared instanceof Archive)) {
-            return false;
-        }
-
-        Archive comparedArchive = (Archive) compared;
-
-        return this.id.equals(comparedArchive.id);
+    public boolean equals(Object obj) {
+        return obj instanceof Archive && this.id.equals(((Archive) obj).id);
     }
 
     @Override
