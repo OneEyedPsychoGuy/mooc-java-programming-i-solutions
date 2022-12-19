@@ -38,20 +38,16 @@ public class SimpleDate {
     public boolean before(SimpleDate compared) {
         if(this.year < compared.year) {
             return true;
-        }
-
+        } 
+        
         if(this.year == compared.year && 
             this.month < compared.month) {
             return true;
         }
 
-        if(this.year == compared.year && 
+        return this.year == compared.year && 
             this.month == compared.month &&
-            this.day < compared.day) {
-            return true;
-        }
-
-        return false;
+            this.day < compared.day;
     }
 
     @Override
