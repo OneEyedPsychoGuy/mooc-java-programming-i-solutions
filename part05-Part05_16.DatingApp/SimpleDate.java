@@ -35,25 +35,27 @@ public class SimpleDate {
         }
     }
 
-    @Override
-    public String toString() {
-        return this.day + "." + this.month + "." + this.year;
-    }
-
     public boolean before(SimpleDate compared) {
-        if (this.year < compared.year) {
+        if(this.year < compared.year) {
             return true;
         }
 
-        if (this.year == compared.year && this.month < compared.month) {
+        if(this.year == compared.year && 
+            this.month < compared.month) {
             return true;
         }
 
-        if (this.year == compared.year && this.month == compared.month &&
-                 this.day < compared.day) {
+        if(this.year == compared.year && 
+            this.month == compared.month &&
+            this.day < compared.day) {
             return true;
         }
 
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return this.day + "." + this.month + "." + this.year;
     }
 }
