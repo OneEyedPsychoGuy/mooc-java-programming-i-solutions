@@ -23,13 +23,9 @@ public class Person {
 
         Person comparedPerson = (Person) compared;
 
-        if(this.name.equals(comparedPerson.name) &&
+        return this.name.equals(comparedPerson.name) &&
             this.birthday.equals(comparedPerson.birthday) &&
             this.height == comparedPerson.height &&
-            this.weight == comparedPerson.weight) {
-            return true;
-        }
-
-        return false;
+            this.weight == comparedPerson.weight;
     }
 }
