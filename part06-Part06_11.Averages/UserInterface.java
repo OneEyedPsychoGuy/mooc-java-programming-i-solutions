@@ -11,20 +11,20 @@ public class UserInterface {
 
     public void start() {
         readPoints();
-        System.out.println("");
+        System.out.println();
         printGradeDistribution();
     }
 
     public void readPoints() {
-        while (true) {
+        while(true) {
             System.out.print("Points: ");
             String input = scanner.nextLine();
-            if (input.equals("")) {
+            if(input.equals("")) {
                 break;
             }
 
             int points = Integer.valueOf(input);
-            if (points < 0 || points > 100) {
+            if(points < 0 || points > 100) {
                 System.out.println("Impossible number.");
                 continue;
             }
@@ -34,21 +34,19 @@ public class UserInterface {
     }
 
     public void printGradeDistribution() {
-        int grade = 5;
-        while (grade >= 0) {
+        for(int grade = 5; grade >= 0; grade--) {
             int stars = register.numberOfGrades(grade);
             System.out.print(grade + ": ");
-            printsStars(stars);
-            System.out.println("");
-
-            grade = grade - 1;
+            printStars(stars);
+            System.out.println();
         }
+
         System.out.println("The average of points: " + this.register.averageOfPoints());
         System.out.println("The average of grades: " + this.register.averageOfGrades());
     }
 
-    public static void printsStars(int stars) {
-        while (stars > 0) {
+    public static void printStars(int stars) {
+        while(stars > 0) {
             System.out.print("*");
             stars--;
         }

@@ -14,32 +14,31 @@ public class GradeRegister {
         this.points.add(points);
     }
 
-    public int numberOfGrades(int grade) {
+    public int numberOfGrades(int search) {
         int count = 0;
-        for (int received : this.grades) {
-            if (received == grade) {
+        for(int grade : this.grades) {
+            if(grade == search) {
                 count++;
             }
         }
+        
         return count;
     }
 
     public static int pointsToGrade(int points) {
-        int grade = 0;
-        if (points < 50) {
-            grade = 0;
-        } else if (points < 60) {
-            grade = 1;
-        } else if (points < 70) {
-            grade = 2;
-        } else if (points < 80) {
-            grade = 3;
-        } else if (points < 90) {
-            grade = 4;
+        if(points < 50) {
+            return 0;
+        } else if(points < 60) {
+            return 1;
+        } else if(points < 70) {
+            return 2;
+        } else if(points < 80) {
+            return 3;
+        } else if(points < 90) {
+            return 4;
         } else {
-            grade = 5;
+            return 5;
         }
-        return grade;
     }
 
     public double averageOfGrades() {
@@ -51,6 +50,7 @@ public class GradeRegister {
         for(int grade : this.grades) {
             sum += grade;
         }
+
         return 1.0 * sum / this.grades.size();
     }
 
@@ -60,9 +60,10 @@ public class GradeRegister {
         }
 
         int sum = 0;
-        for(int points : this.points) {
-            sum += points;
+        for(int p : this.points) {
+            sum += p;
         }
+
         return 1.0 * sum / this.points.size();
     }
 }
