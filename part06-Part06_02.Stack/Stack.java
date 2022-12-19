@@ -7,16 +7,16 @@ public class Stack {
         this.stack = new ArrayList<>();
     }
 
+    public ArrayList<String> values() {
+        return this.stack;
+    }
+
     public boolean isEmpty() {
         return this.stack.isEmpty();
     }
 
     public void add(String value) {
         this.stack.add(value);
-    }
-
-    public ArrayList<String> values() {
-        return this.stack;
     }
 
     public String take() {
