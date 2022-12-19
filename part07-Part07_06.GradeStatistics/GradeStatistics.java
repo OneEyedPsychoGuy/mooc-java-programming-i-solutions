@@ -3,15 +3,15 @@ import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Statistic {
-    private static int MIN_POINTS = 0;
-    private static int MAX_POINTS = 100;
-    private static int PASSING_GRADE = 50;
+public class GradeStatistics {
+    private static final int MIN_POINTS = 0;
+    private static final int MAX_POINTS = 100;
+    private static final int PASSING_GRADE = 50;
 
     private List<Integer> points;
     private Map<Integer, Integer> gradeCounts;
 
-    public Statistic() {
+    public GradeStatistics() {
         this.points = new ArrayList<>();
         this.gradeCounts = new HashMap<>();
     }

@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
 public class UserInterface {
-    private Statistic statistic;
+    private GradeStatistics distribution;
     private Scanner scanner;
 
     public UserInterface() {
-        this.statistic = new Statistic();
+        this.distribution = new GradeStatistics();
         this.scanner = new Scanner(System.in);
     }
 
@@ -22,33 +22,33 @@ public class UserInterface {
                 break;
             }
 
-            this.statistic.add(points);
+            this.distribution.add(points);
         }
     }
 
     private void printResults() {
-        double averageAllPoints = this.statistic.averageAllPoints();
-        double averagePassingPoints = this.statistic.averagePassingPoints();
+        double averageAllPoints = this.distribution.averageAllPoints();
+        double averagePassingPoints = this.distribution.averagePassingPoints();
 
         System.out.println("Point average (all): " + (averageAllPoints != -1.0 ? averageAllPoints : "-"));
         System.out.println("Point average (passing): " + (averagePassingPoints != -1.0 ? averagePassingPoints : "-"));
-        System.out.println("Pass percentage: " + this.statistic.passPercentage());
+        System.out.println("Pass percentage: " + this.distribution.passPercentage());
         this.printGradeDistribution();
     }
 
     private void printGradeDistribution() {
         System.out.println("Grade distrbution:");
         for(int grade = 5; grade >= 0; grade--) {
-            System.out.println(grade + ": " + this.printStars(this.statistic.gradeCount(grade)));
+            System.out.print(grade + ": ");
+            this.printStars(this.distribution.gradeCount(grade));
         }
     }
 
-    private String printStars(int count) {
-        String stars = "";
-        while(count > 0) {
-            stars += "*";
-            count--;
+    private void printStars(int stars) {
+        while(stars > 0) {
+            System.out.print("*");
+            stars--;
         }
-        return stars;
+        System.out.println();
     }
 }
