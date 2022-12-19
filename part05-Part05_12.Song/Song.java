@@ -10,20 +10,20 @@ public class Song {
     }
 
     @Override
-    public boolean equals(Object compared) {
-        if(this == compared) {
+    public boolean equals(Object obj) {
+        if(this == obj) {
             return true;
         }
 
-        if(!(compared instanceof Song)) {
+        if(!(obj instanceof Song)) {
             return false;
         }
 
-        Song comparedSong = (Song) compared;
+        Song song = (Song) obj;
 
-        return this.artist.equals(comparedSong.artist) &&
-            this.title.equals(comparedSong.title) &&
-            this.durationInSeconds == comparedSong.durationInSeconds;
+        return this.artist.equals(song.artist) &&
+            this.title.equals(song.title) &&
+            this.durationInSeconds == song.durationInSeconds;
     }
 
     @Override
