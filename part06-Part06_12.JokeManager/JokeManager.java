@@ -5,7 +5,7 @@ public class JokeManager {
     private ArrayList<String> jokes;
 
     public JokeManager() {
-        jokes = new ArrayList<>();
+        this.jokes = new ArrayList<>();
     }
 
     public void addJoke(String joke) {
@@ -17,13 +17,11 @@ public class JokeManager {
             return "Jokes are in short supply.";
         }
 
-        Random random = new Random();
-        int index = random.nextInt(this.jokes.size());
-        return this.jokes.get(index);
+        return this.jokes.get(new Random().nextInt(this.jokes.size()));
     }
 
     public void printJokes() {
-        for (String joke : this.jokes) {
+        for(String joke : this.jokes) {
             System.out.println(joke);
         }
     }

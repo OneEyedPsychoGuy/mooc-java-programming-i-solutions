@@ -12,11 +12,15 @@ public class UserInterface {
     public void start() {
         String command = "";
 
-        do {
+        while(true) {
             this.menu();
             command = this.scanner.nextLine();
+            if(command.equals("X")) {
+                break;
+            }
+
             this.processCommand(command);
-        } while(!command.equals("X"));
+        }
     }
 
     public void menu() {
@@ -40,8 +44,6 @@ public class UserInterface {
             case "3":
                 this.list();
                 break;
-            case "X":
-                break;
             default:
                 System.out.println("Unknown command");
         }
@@ -49,16 +51,16 @@ public class UserInterface {
 
     public void add() {
         System.out.println("Write the joke to be added:");
-        manager.addJoke(this.scanner.nextLine());
+        this.manager.addJoke(this.scanner.nextLine());
     }
 
     public void draw() {
         System.out.println("Drawing a joke:");
-        System.out.println(manager.drawJoke());
+        System.out.println(this.manager.drawJoke());
     }
 
     public void list() {
         System.out.println("Printing the jokes:");
-        manager.printJokes();
+        this.manager.printJokes();
     }
 }
