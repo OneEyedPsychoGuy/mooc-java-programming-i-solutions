@@ -1,10 +1,11 @@
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Archive> archives = new ArrayList<>();
+        List<Archive> archives = new ArrayList<>();
 
         while(true) {
             System.out.println("Identifier? (empty will stop)");
