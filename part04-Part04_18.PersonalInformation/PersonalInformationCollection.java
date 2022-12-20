@@ -1,10 +1,11 @@
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PersonalInformationCollection {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<PersonalInformation> infoCollection = new ArrayList<>();
+        List<PersonalInformation> infoCollection = new ArrayList<>();
 
         while(true) {
             System.out.print("First name: ");
