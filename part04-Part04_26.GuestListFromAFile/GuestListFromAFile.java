@@ -1,12 +1,13 @@
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GuestListFromAFile {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        ArrayList<String> names = new ArrayList<>();
+        List<String> names = new ArrayList<>();
 
         System.out.println("Name of the file:");
         String file = keyboard.nextLine();
