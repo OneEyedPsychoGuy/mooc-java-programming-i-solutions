@@ -1,10 +1,11 @@
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class OnlyTheseNumbers {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Integer> nums = new ArrayList<>();
+        List<Integer> nums = new ArrayList<>();
 
         while(true) {
             int num = Integer.valueOf(scanner.nextLine());
