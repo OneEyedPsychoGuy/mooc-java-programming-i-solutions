@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,7 +12,7 @@ public class StoringRecords {
         String file = keyboard.nextLine();
         keyboard.close();
 
-        ArrayList<Person> persons = readRecordsFromFile(file);
+        List<Person> persons = readRecordsFromFile(file);
         System.out.println("Persons: " + persons.size());
 
         System.out.println("Persons:");
@@ -20,8 +21,8 @@ public class StoringRecords {
         }
     }
 
-    public static ArrayList<Person> readRecordsFromFile(String file) {
-        ArrayList<Person> persons = new ArrayList<>();
+    public static List<Person> readRecordsFromFile(String file) {
+        List<Person> persons = new ArrayList<>();
 
         try(Scanner fileReader = new Scanner(Paths.get(file))) {
             while(fileReader.hasNextLine()) {
