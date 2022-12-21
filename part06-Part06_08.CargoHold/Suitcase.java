@@ -1,7 +1,8 @@
+import java.util.List;
 import java.util.ArrayList;
 
 public class Suitcase {
-    private ArrayList<Item> items;
+    private List<Item> items;
     private int maxWeight;
     private int weight;
 

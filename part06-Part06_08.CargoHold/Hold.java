@@ -1,7 +1,8 @@
+import java.util.List;
 import java.util.ArrayList;
 
 public class Hold {
-    private ArrayList<Suitcase> suitcases;
+    private List<Suitcase> suitcases;
     private int maxWeight;
     private int weight;
 
