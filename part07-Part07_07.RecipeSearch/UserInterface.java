@@ -33,7 +33,7 @@ public class UserInterface {
             while(fileReader.hasNextLine()) {
                 String name = fileReader.nextLine();
                 int cookingTime = Integer.valueOf(fileReader.nextLine());
-                ArrayList<String> ingredients = new ArrayList<>();
+                List<String> ingredients = new ArrayList<>();
                 
                 while(fileReader.hasNextLine()) {
                     String ingredient = fileReader.nextLine();
