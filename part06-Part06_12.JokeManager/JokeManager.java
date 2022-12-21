@@ -1,8 +1,9 @@
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class JokeManager {
-    private ArrayList<String> jokes;
+    private List<String> jokes;
 
     public JokeManager() {
         this.jokes = new ArrayList<>();
