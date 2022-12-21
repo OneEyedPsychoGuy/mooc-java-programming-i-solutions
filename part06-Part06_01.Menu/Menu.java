@@ -1,7 +1,8 @@
+import java.util.List;
 import java.util.ArrayList;
 
 public class Menu {
-    private ArrayList<String> meals;
+    private List<String> meals;
 
     public Menu() {
         this.meals = new ArrayList<>();
