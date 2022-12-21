@@ -1,7 +1,8 @@
+import java.util.Map;
 import java.util.HashMap;
 
 public class SimpleDictionary {
-    private HashMap<String, String> translations;
+    private Map<String, String> translations;
 
     public SimpleDictionary() {
         this.translations = new HashMap<>();
