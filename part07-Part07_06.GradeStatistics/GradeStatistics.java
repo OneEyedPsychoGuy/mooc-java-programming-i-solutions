@@ -1,7 +1,6 @@
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.HashMap;
-import java.util.Map;
 
 public class GradeStatistics {
     private static final int MIN_POINTS = 0;
@@ -9,11 +8,11 @@ public class GradeStatistics {
     private static final int PASSING_GRADE = 50;
 
     private List<Integer> points;
-    private Map<Integer, Integer> gradeCounts;
+    private List<Integer> grades;
 
     public GradeStatistics() {
         this.points = new ArrayList<>();
-        this.gradeCounts = new HashMap<>();
+        this.grades = new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0, 0));
     }
 
     public void add(int points) {
@@ -21,7 +20,7 @@ public class GradeStatistics {
             this.points.add(points);
 
             int grade = this.grade(points);
-            this.gradeCounts.put(grade, this.gradeCounts.getOrDefault(grade, 0) + 1);
+            this.grades.set(grade, this.grades.get(grade) + 1);
         }
     }
 
@@ -55,7 +54,7 @@ public class GradeStatistics {
     }
 
     public int gradeCount(int grade) {
-        return this.gradeCounts.getOrDefault(grade, 0);
+        return this.grades.get(grade);
     }
 
     private int grade(int points) {
