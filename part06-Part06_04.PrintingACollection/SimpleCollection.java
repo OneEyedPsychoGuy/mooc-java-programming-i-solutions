@@ -1,15 +1,16 @@
+import java.util.List;
 import java.util.ArrayList;
 
 public class SimpleCollection {
     private String name;
-    private ArrayList<String> elements;
+    private List<String> elements;
 
     public SimpleCollection(String name) {
         this.name = name;
         this.elements = new ArrayList<>();
     }
 
-    public ArrayList<String> getElements() {
+    public List<String> getElements() {
         return this.elements;
     }
 
