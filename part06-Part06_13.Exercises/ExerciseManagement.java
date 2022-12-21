@@ -1,7 +1,8 @@
+import java.util.List;
 import java.util.ArrayList;
 
 public class ExerciseManagement {
-    private ArrayList<Exercise> exercises;
+    private List<Exercise> exercises;
 
     public ExerciseManagement() {
         this.exercises = new ArrayList<>();
