@@ -1,10 +1,11 @@
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Searching {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Book> books = new ArrayList<>();
+        List<Book> books = new ArrayList<>();
 
         System.out.println("How many books to create?");
         int numberOfBooks = Integer.valueOf(scanner.nextLine());
@@ -39,7 +40,7 @@ public class Searching {
         }
     }
 
-    public static int linearSearch(ArrayList<Book> books, int searchedId) {
+    public static int linearSearch(List<Book> books, int searchedId) {
         for(int i = 0; i < books.size(); i++) {
             if(books.get(i).getId() == searchedId) {
                 return i;
@@ -48,7 +49,7 @@ public class Searching {
         return -1;
     }
 
-    public static int binarySearch(ArrayList<Book> books, long searchedId) {
+    public static int binarySearch(List<Book> books, long searchedId) {
         int begin = 0;
         int end = books.size() - 1;
 
