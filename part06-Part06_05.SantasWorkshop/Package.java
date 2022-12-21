@@ -1,7 +1,8 @@
+import java.util.List;
 import java.util.ArrayList;
 
 public class Package {
-    private ArrayList<Gift> gifts;
+    private List<Gift> gifts;
 
     public Package() {
         this.gifts = new ArrayList<>();
